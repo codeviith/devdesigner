@@ -38,7 +38,7 @@ export default {
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))',
-					glow: 'hsl(var(--secondary-glow))'z
+					glow: 'hsl(var(--secondary-glow))'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
@@ -90,7 +90,8 @@ export default {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-secondary': 'var(--gradient-secondary)',
 				'gradient-surface': 'var(--gradient-surface)',
-				'gradient-glow': 'var(--gradient-glow)'
+				'gradient-glow': 'var(--gradient-glow)',
+				'gradient-gray-white': 'var(--gradient-gray-white)'
 			},
 			boxShadow: {
 				'soft': 'var(--shadow-soft)',
