@@ -1,5 +1,14 @@
+import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog';
 import { 
   GraduationCap, 
   Award, 
@@ -12,43 +21,24 @@ import {
 } from 'lucide-react';
 
 export function EducationSection() {
+  const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null);
   const education = [
     {
-      degree: 'Hands-On Product Design & Fabrication',
-      specialization: 'DYPLab',
-      institution: 'Display Your Passion Like a Boss, LLC',
-      location: 'Professional Experience',
-      duration: '2021 - Present',
+      degree: 'Full Stack Software Engineer',
+      specialization: '',
+      institution: 'Flatiron School',
+      location: '',
+      duration: '2023',
       gpa: '',
-      highlights: [
-        'Transitioned from hobbyist to professional-level CAD work',
-        'Designed and prototyped mechanical parts for collectible display products',
-        'Broadened expertise in real-world product development, manufacturability, and fabrication',
-        'Delivered client-oriented work and supported small-batch production'
-      ],
+      highlights: [],
       coursework: []
     },
     {
-      degree: 'Advanced CAD & Product Development',
-      specialization: 'Self-Taught',
-      institution: 'Independent Learning & Personal Projects',
-      location: 'Self-Directed',
-      duration: '2015 - Present',
-      gpa: '',
-      highlights: [
-        'Over a decade of experience learning CAD through self-directed projects',
-        'Built foundational skills using Fusion 360, SolidWorks, and OnShape',
-        'Developed expertise in 3D modeling, prototyping, tolerance fit, and mechanical design',
-        'Strengthened skills through personal R&D and hobby projects'
-      ],
-      coursework: []
-    },
-    {
-      degree: 'Bachelor of Science in Human Biology',
+      degree: 'Bachelor of Science',
       specialization: '',
       institution: 'University of California, San Diego',
       location: 'San Diego, CA',
-      duration: 'June 2012',
+      duration: '2012',
       gpa: '',
       highlights: [],
       coursework: []
@@ -59,9 +49,33 @@ export function EducationSection() {
     {
       name: 'Full Stack Software Engineering Certificate',
       issuer: 'Flatiron School',
-      date: 'December 2023',
-      credentialId: 'Show Certificate',
+      date: '2023',
+      credentialId: 'Completed comprehensive full-stack development program covering modern web technologies.',
       skills: ['Full Stack Development', 'JavaScript', 'React', 'Python', 'Flask'],
+      level: 'Certificate'
+    },
+    {
+      name: 'Additive Manufacturing & 3D Printing– FDM/SLA Printing & Material Selection',
+      issuer: '',
+      date: '2016—Present',
+      credentialId: 'Hands-on experience in end-to-end prototyping and small-batch manufacturing workflows.',
+      skills: ['3D Printing', 'FDM', 'SLA', 'Material Selection', 'Manufacturing'],
+      level: 'Training'
+    },
+    {
+      name: 'Advanced CAD Design & 3D Modeling – Fusion 360, SolidWorks, Onshape',
+      issuer: '',
+      date: '2021—Present',
+      credentialId: 'Self-directed training and applied experience through professional product design and prototyping at Display Your Passion Like a Boss, LLC.',
+      skills: ['Fusion 360', 'SolidWorks', 'Onshape', 'CAD Design', '3D Modeling'],
+      level: 'Training'
+    },
+    {
+      name: 'Adult and Pediatric First Aid/CPR/AED',
+      issuer: 'American Red Cross Training Services',
+      date: '2025—2027',
+      credentialId: 'Certified for emergency preparedness and safety compliance at The Coding Space.',
+      skills: ['First Aid', 'CPR', 'AED', 'Safety Compliance'],
       level: 'Certificate'
     }
   ];
@@ -75,66 +89,63 @@ export function EducationSection() {
           <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient mb-4">
             Education & Certifications
           </h2>
-          <div className="w-24 h-1 bg-gradient-primary mx-auto mt-8 rounded-full" />
+          <div className="w-24 h-1 bg-gradient-secondary mx-auto mt-8 rounded-full" />
         </div>
         
         {/* Education */}
         <div className="mb-16">
           <h3 className="text-2xl font-display font-semibold text-gradient-secondary mb-8 flex items-center gap-3">
-            <GraduationCap className="w-7 h-7 text-primary" />
+            <GraduationCap className="w-7 h-7 text-secondary" />
             Academic Background
           </h3>
           
-          <div className="space-y-6">
+          <div className="space-y-8">
             {education.map((edu, index) => (
-              <Card 
+              <div 
                 key={edu.degree}
-                className="card-hover p-8 bg-gradient-surface border-card-border/50"
+                className="border-l-4 border-primary/30 pl-6 py-4"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="space-y-6">
+                <div className="space-y-4">
                   {/* Main Info */}
-                  <div className="space-y-4">
-                    <div className="space-y-2">
-                      <h4 className="text-xl font-display font-semibold text-gradient">
-                        {edu.degree}
-                      </h4>
-                      {edu.specialization && <p className="text-lg text-foreground">{edu.specialization}</p>}
-                      <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                  <div className="space-y-2">
+                    <h4 className="text-xl font-display font-semibold text-white">
+                      {edu.degree}
+                    </h4>
+                    {edu.specialization && <p className="text-lg text-foreground">{edu.specialization}</p>}
+                    <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-1">
+                        <BookOpen className="w-4 h-4 text-cyan-400" />
+                        {edu.institution}
+                      </div>
+                      {edu.location && (
                         <div className="flex items-center gap-1">
-                          <BookOpen className="w-4 h-4" />
-                          {edu.institution}
+                          <MapPin className="w-4 h-4 text-cyan-400" />
+                          {edu.location}
                         </div>
-                        {edu.location && (
-                          <div className="flex items-center gap-1">
-                            <MapPin className="w-4 h-4" />
-                            {edu.location}
-                          </div>
-                        )}
-                        <div className="flex items-center gap-1">
-                          <Calendar className="w-4 h-4" />
-                          {edu.duration}
-                        </div>
+                      )}
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-4 h-4 text-cyan-400" />
+                        {edu.duration}
                       </div>
                     </div>
-                    
-                    {edu.highlights.length > 0 && (
-                      <div className="space-y-3">
-                        <h5 className="font-semibold text-foreground">Key Achievements:</h5>
-                        <ul className="space-y-1 text-sm text-muted-foreground">
-                          {edu.highlights.map((highlight, i) => (
-                            <li key={i} className="flex items-start gap-2">
-                              <Star className="w-3 h-3 text-primary mt-1 flex-shrink-0" />
-                              {highlight}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
                   </div>
                   
+                  {edu.highlights.length > 0 && (
+                    <div className="space-y-3">
+                      <h5 className="font-semibold text-foreground">Key Achievements:</h5>
+                      <ul className="space-y-1 text-sm text-muted-foreground">
+                        {edu.highlights.map((highlight, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <Star className="w-3 h-3 text-primary mt-1 flex-shrink-0" />
+                            {highlight}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
@@ -143,32 +154,32 @@ export function EducationSection() {
         <div className="mb-16">
           <h3 className="text-2xl font-display font-semibold text-gradient-secondary mb-8 flex items-center gap-3">
             <Award className="w-7 h-7 text-secondary" />
-            Professional Certifications
+            Professional Certifications & Training
           </h3>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="space-y-8">
             {certifications.map((cert, index) => (
-              <Card 
+              <div 
                 key={cert.name}
-                className="card-hover p-6 bg-surface border-card-border/50 group"
+                className="border-l-4 border-primary/30 pl-6 py-4"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="space-y-4">
-                  <div className="flex items-start justify-between">
+                  <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
-                      <h4 className="font-display font-semibold text-foreground group-hover:text-gradient transition-colors duration-300 line-clamp-2">
+                      <h4 className="font-display font-semibold text-foreground text-lg">
                         {cert.name}
                       </h4>
-                      <p className="text-sm text-muted-foreground mt-1">{cert.issuer}</p>
+                      {cert.issuer && <p className="text-sm text-muted-foreground mt-1">{cert.issuer}</p>}
                     </div>
                     <Badge 
                       variant="outline" 
-                      className={`text-xs flex-shrink-0 ${
+                      className={`text-sm font-bold flex-shrink-0 border-2 px-3 py-1 ${
                         cert.level.includes('Professional') || cert.level.includes('Black Belt') 
-                          ? 'border-primary/50 text-primary' 
+                          ? 'border-primary text-primary' 
                           : cert.level.includes('Green Belt')
-                          ? 'border-secondary/50 text-secondary'
-                          : 'border-accent/50 text-accent'
+                          ? 'border-secondary text-secondary'
+                          : 'border-accent text-accent'
                       }`}
                     >
                       {cert.level}
@@ -178,13 +189,26 @@ export function EducationSection() {
                   <div className="space-y-2 text-xs text-muted-foreground">
                     <div className="flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
-                      Issued: {cert.date}
+                      <span className="font-bold text-white">Issued:</span> {cert.date}
                     </div>
                     <div className="flex items-center gap-1">
                       <ExternalLink className="w-3 h-3" />
-                      ID: {cert.credentialId}
+                      <span className="font-bold text-white">Description:</span> {cert.credentialId}
                     </div>
                   </div>
+                  
+                  {cert.name === 'Full Stack Software Engineering Certificate' && (
+                    <div className="mt-4">
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setSelectedCertificate(cert.name)}
+                        className="text-primary border-primary hover:shadow-[0_0_20px_hsl(var(--primary)/0.8)] transition-shadow duration-300"
+                      >
+                        Show Certificate
+                      </Button>
+                    </div>
+                  )}
                   
                   <div>
                     <h6 className="font-semibold text-xs text-foreground mb-2">Skills Validated:</h6>
@@ -193,7 +217,7 @@ export function EducationSection() {
                         <Badge 
                           key={skill}
                           variant="secondary" 
-                          className="text-xs bg-muted/20 text-muted-foreground border-border/20"
+                          className="text-xs bg-muted/20 text-muted-foreground border border-muted-foreground hover:bg-muted/20"
                         >
                           {skill}
                         </Badge>
@@ -201,12 +225,51 @@ export function EducationSection() {
                     </div>
                   </div>
                 </div>
-              </Card>
+              </div>
             ))}
           </div>
         </div>
         
       </div>
+
+      {/* Certificate Modal */}
+      <Dialog open={selectedCertificate !== null} onOpenChange={() => setSelectedCertificate(null)}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-background/95 backdrop-blur-sm border-border/50 [&>button]:text-destructive [&>button]:hover:text-destructive/80 [&>button>svg]:w-6 [&>button>svg]:h-6">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-display font-bold text-gradient">
+              {selectedCertificate}
+            </DialogTitle>
+            <DialogDescription className="text-muted-foreground">
+              Certificate of Completion
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="space-y-6 mt-6">
+            {/* Certificate Image Placeholder */}
+            <div className="aspect-[4/3] bg-muted/30 rounded-md flex items-center justify-center border border-border/30">
+              <div className="text-center space-y-2">
+                <div className="text-4xl">📜</div>
+                <p className="text-muted-foreground">Certificate Image</p>
+                <p className="text-sm text-muted-foreground/70">Placeholder for certificate photo</p>
+              </div>
+            </div>
+
+            {/* Close Button */}
+            <div className="pt-4 border-t border-border/50">
+              <Button
+                onClick={() => setSelectedCertificate(null)}
+                className="w-full border-0 transition-all duration-300 hover:opacity-90"
+                style={{ 
+                  background: 'var(--gradient-destructive)',
+                  color: 'hsl(var(--foreground))'
+                }}
+              >
+                Close
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

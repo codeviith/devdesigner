@@ -1,5 +1,4 @@
 import { Card } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { 
   Wrench, 
@@ -9,14 +8,56 @@ import {
   MousePointer,
   Cpu,
   Zap,
-  Settings
+  Factory,
+  Box,
+  Target,
+  Lightbulb,
+  Users,
+  Package,
+  Settings,
+  FlaskConical,
+  TestTube
 } from 'lucide-react';
+import { SiReact, SiArduino, SiPython, SiAutodesk } from 'react-icons/si';
+import onshapeIcon from '@/assets/icons/onshape.png';
+import solidworksIcon from '@/assets/icons/solidworks.png';
+import cadModelingIcon from '@/assets/icons/cad-modeling.png';
+import dfmCompassIcon from '@/assets/icons/dfm-compass.png';
+import cadModelingCubeIcon from '@/assets/icons/cad-modeling-cube.png';
 
 export function SkillsSection() {
+  const keyHighlights = [
+    { icon: cadModelingCubeIcon, title: 'CAD Modeling', desc: 'Parametric 3D parts, assemblies, and detailed drawings', isImage: true },
+    { icon: Package, title: 'Product Design', desc: 'From concept to refined, manufacturable forms' },
+    { icon: dfmCompassIcon, title: 'Design for Manufacturing (DFM)', desc: 'Optimized for cost, quality, and throughput', isImage: true },
+    { icon: FlaskConical, title: 'Research & Development (R&D)', desc: 'Rapid iteration, testing, and validation' },
+    { icon: Factory, title: 'Small-Scale Manufacturing & Post-Processing', desc: 'CNC, 3D printing, finishing workflows' },
+    { icon: TestTube, title: 'Prototyping', desc: 'Functional and appearance prototype development' }
+  ];
+
+  const designValues = [
+    {
+      icon: Target,
+      title: 'Precision-Focused',
+      description: 'Every design element serves a purpose with meticulous attention to detail'
+    },
+    {
+      icon: Lightbulb,
+      title: 'Innovation-Driven',
+      description: 'Pushing boundaries to create breakthrough product solutions'
+    },
+    {
+      icon: Users,
+      title: 'User-Centric',
+      description: 'Designing with empathy and real-world usability in mind'
+    }
+  ];
+
   const skillCategories = [
     {
       title: 'CAD Software',
-      icon: Wrench,
+      icon: cadModelingIcon,
+      isImage: true,
       color: 'text-primary',
       skills: [
         { name: 'Fusion 360', level: 95, description: 'Cloud-based parametric modeling' },
@@ -40,7 +81,7 @@ export function SkillsSection() {
     },
     {
       title: 'Engineering & Manufacturing',
-      icon: Settings,
+      icon: Factory,
       color: 'text-accent',
       skills: [
         { name: 'GD&T', level: 85, description: 'Geometric dimensioning and tolerancing' },
@@ -80,49 +121,113 @@ export function SkillsSection() {
   ];
 
   return (
-    <section id="skills" className="py-20 px-6">
+    <section id="skills" style={{ padding: 'var(--space-3xl) var(--space-md)' }}>
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient-secondary mb-4">
+        <div className="text-center" style={{ marginBottom: 'var(--space-2xl)' }}>
+          <h2 className="font-display font-bold text-gradient" style={{ fontSize: 'var(--text-5xl)', marginBottom: 'var(--space-sm)' }}>
             Skills & Expertise
           </h2>
-          <div className="w-24 h-1 bg-gradient-secondary mx-auto mt-8 rounded-full" />
+          <div className="h-1 bg-gradient-secondary mx-auto rounded-full" style={{ width: 'clamp(4rem, 10vw, 6rem)', marginTop: 'var(--space-lg)' }} />
         </div>
+
+        {/* Key Highlights */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-display font-semibold mb-6 text-gradient-secondary text-center">
+            Key Highlights
+          </h3>
+          <div className="grid md:grid-cols-2 gap-4">
+            {keyHighlights.map((item) => (
+              <Card 
+                key={item.title}
+                className="p-6 bg-gradient-surface border-card-border/50"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="p-2 rounded-lg bg-gradient-primary">
+                    {item.isImage ? (
+                      <img src={item.icon as string} alt={item.title} className="w-8 h-8" />
+                    ) : (
+                      <item.icon className="w-8 h-8 text-primary-foreground" />
+                    )}
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">{item.title}</h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Design Values */}
+        <div className="mb-16">
+          <h3 className="text-2xl font-display font-semibold mb-6 text-gradient-secondary text-center">
+            Design Values
+          </h3>
+          <div className="space-y-4">
+            {designValues.map((value, index) => (
+              <Card 
+                key={value.title}
+                className="p-6 bg-gradient-surface border-card-border/50"
+                style={{ animationDelay: `${index * 150}ms` }}
+              >
+                <div className="flex items-start gap-4">
+                  <div className="p-2 rounded-lg bg-gradient-primary">
+                    <value.icon className="w-5 h-5 text-primary-foreground" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-2">
+                      {value.title}
+                    </h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {value.description}
+                    </p>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Skills */}
+        <h3 className="text-2xl font-display font-semibold mb-6 text-gradient-secondary text-center">
+          Skills
+        </h3>
         
         {/* Technical Skills Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category, categoryIndex) => (
             <Card 
               key={category.title}
-              className="card-hover p-8 bg-gradient-surface border-card-border/50"
+              className="p-8 bg-gradient-surface border-card-border/50"
               style={{ animationDelay: `${categoryIndex * 100}ms` }}
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 rounded-xl bg-gradient-primary">
-                  <category.icon className="w-6 h-6 text-primary-foreground" />
+                  {category.isImage ? (
+                    <img 
+                      src={category.icon as string} 
+                      alt={category.title}
+                      className="w-6 h-6 object-contain"
+                    />
+                  ) : (
+                    <category.icon className="w-6 h-6 text-primary-foreground" />
+                  )}
                 </div>
-                <h3 className="text-xl font-display font-semibold text-gradient">
+                <h3 className="text-xl font-display font-semibold text-gradient-secondary">
                   {category.title}
                 </h3>
               </div>
               
-              <div className="space-y-6">
+              <div className="grid gap-3">
                 {category.skills.map((skill, skillIndex) => (
                   <div 
                     key={skill.name}
-                    className="space-y-2"
+                    className="p-4 rounded-lg border border-border/40 bg-card"
                     style={{ animationDelay: `${(categoryIndex * 4 + skillIndex) * 100}ms` }}
                   >
-                    <div className="flex justify-between items-center">
-                      <span className="font-medium text-foreground">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
-                    </div>
-                    <Progress 
-                      value={skill.level} 
-                      className="h-2 bg-muted"
-                      indicatorClassName="bg-gradient-skill"
-                    />
-                    <p className="text-xs text-muted-foreground">{skill.description}</p>
+                    <div className="font-medium text-foreground mb-1">{skill.name}</div>
+                    <div className="text-sm text-muted-foreground">{skill.description}</div>
                   </div>
                 ))}
               </div>
@@ -131,47 +236,56 @@ export function SkillsSection() {
         </div>
         
         {/* Soft Skills */}
-        <Card className="glass p-8 border-card-border/50">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-display font-semibold text-gradient mb-4">
-              Professional Competencies
-            </h3>
-          </div>
+        <div className="mb-16">
+          <h3 className="text-2xl font-display font-semibold text-gradient-secondary mb-8 text-center">
+            Professional Competencies
+          </h3>
           
           <div className="flex flex-wrap justify-center gap-3">
             {softSkills.map((skill, index) => (
               <Badge 
                 key={skill}
                 variant="secondary" 
-                className="btn-magnetic px-4 py-2 text-sm bg-card/80 text-foreground border-border/60 hover:border-primary/50 hover:bg-gradient-primary hover:text-primary-foreground transition-all duration-300"
+                className="px-4 py-2 text-sm bg-card/80 text-foreground border-border/60 hover:bg-card/80"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 {skill}
               </Badge>
             ))}
           </div>
-        </Card>
+        </div>
         
         {/* Tools & Software */}
         <div className="mt-16 text-center">
-          <h3 className="text-2xl font-display font-semibold text-gradient mb-8">
+          <h3 className="text-2xl font-display font-semibold text-gradient-secondary mb-8">
             Industry Tools & Platforms
           </h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
             {[
-              { name: 'Fusion 360', icon: Wrench },
-              { name: 'SolidWorks', icon: Layers },
-              { name: 'OnShape', icon: MousePointer },
-              { name: 'Python', icon: Code },
-              { name: 'React', icon: Zap },
-              { name: 'Arduino', icon: Cpu }
+              { name: 'Fusion 360', icon: SiAutodesk, type: 'component' },
+              { name: 'SOLIDWORKS', icon: solidworksIcon, type: 'image' },
+              { name: 'Onshape', icon: onshapeIcon, type: 'image' },
+              { name: 'Python', icon: SiPython, type: 'component' },
+              { name: 'React', icon: SiReact, type: 'component' },
+              { name: 'Arduino', icon: SiArduino, type: 'component' }
             ].map((tool, index) => (
               <Card 
                 key={tool.name}
-                className="card-hover p-6 bg-surface border-card-border/50 text-center group"
+                className="p-6 bg-surface border-card-border/50 text-center hover:bg-surface/80 transition-colors"
                 style={{ animationDelay: `${index * 75}ms` }}
               >
-                <tool.icon className="w-8 h-8 text-primary mx-auto mb-3 group-hover:text-secondary transition-colors duration-300" />
+                {tool.type === 'image' ? (
+                  <img 
+                    src={tool.icon as string} 
+                    alt={`${tool.name} logo`}
+                    className={`w-8 h-8 mx-auto mb-3 object-contain ${
+                      tool.name === 'SOLIDWORKS' ? 'solidworks-cyan-filter' : 
+                      tool.name === 'Onshape' ? 'onshape-cyan-filter' : ''
+                    }`}
+                  />
+                ) : (
+                  <tool.icon className="w-8 h-8 text-primary mx-auto mb-3" />
+                )}
                 <p className="text-sm font-medium text-foreground">{tool.name}</p>
               </Card>
             ))}

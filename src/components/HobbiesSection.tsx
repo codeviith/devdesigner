@@ -5,67 +5,90 @@ import {
   Mountain, 
   Zap,
   Trophy,
-  Target,
+  CircleDot,
   Cpu,
   Box,
   Wrench,
-  PocketKnife
+  Boxes,
+  LucideIcon
 } from 'lucide-react';
+import shuttlecockIcon from '@/assets/icons/shuttlecock.png';
+import tableTennisIcon from '@/assets/icons/table-tennis.png';
+import snowboardingIcon from '@/assets/icons/snowboarding.png';
+import boulderingIcon from '@/assets/icons/bouldering.png';
+import rubiksCubeIcon from '@/assets/icons/rubiks-cube.png';
+import electricSkateboardIcon from '@/assets/icons/electric-skateboard.png';
+import diyProjectsIcon from '@/assets/icons/diy-projects.png';
+import roboticsIcon from '@/assets/icons/robotics.png';
+import printing3dIcon from '@/assets/icons/3d-printing.png';
+import swimmingIcon from '@/assets/icons/swimming.png';
+import hikingIcon from '@/assets/icons/hiking.png';
+
+type SportItem = {
+  name: string;
+  icon: LucideIcon | string;
+  isImage: boolean;
+};
 
 export function HobbiesSection() {
-  const sports = [
+  const sports: SportItem[] = [
     {
       name: 'Swimming',
-      icon: Waves,
-      color: 'text-primary'
+      icon: swimmingIcon,
+      isImage: true
     },
     {
       name: 'Hiking',
-      icon: Mountain,
-      color: 'text-secondary'
+      icon: hikingIcon,
+      isImage: true
+    },
+    {
+      name: 'Snowboarding',
+      icon: snowboardingIcon,
+      isImage: true
+    },
+    {
+      name: 'Bouldering',
+      icon: boulderingIcon,
+      isImage: true
     },
     {
       name: 'Badminton',
-      icon: Target,
-      color: 'text-accent'
+      icon: shuttlecockIcon,
+      isImage: true
     },
     {
       name: 'Table Tennis',
-      icon: Target,
-      color: 'text-primary'
-    },
-    {
-      name: 'Racquet Ball',
-      icon: Target,
-      color: 'text-secondary'
+      icon: tableTennisIcon,
+      isImage: true
     }
   ];
 
-  const hobbies = [
+  const hobbies: SportItem[] = [
     {
       name: 'DIY Projects',
-      icon: Wrench,
-      color: 'text-primary'
+      icon: diyProjectsIcon,
+      isImage: true
     },
     {
       name: 'Electric Skateboards',
-      icon: Zap,
-      color: 'text-secondary'
+      icon: electricSkateboardIcon,
+      isImage: true
     },
     {
       name: '3D Printing and Designs',
-      icon: Box,
-      color: 'text-accent'
+      icon: printing3dIcon,
+      isImage: true
     },
     {
       name: 'Robotics/Circuitry',
-      icon: Cpu,
-      color: 'text-primary'
+      icon: roboticsIcon,
+      isImage: true
     },
     {
       name: 'Rubik\'s Cube',
-      icon: PocketKnife,
-      color: 'text-secondary'
+      icon: rubiksCubeIcon,
+      isImage: true
     }
   ];
 
@@ -74,7 +97,7 @@ export function HobbiesSection() {
     <section id="hobbies" className="py-20 px-6 bg-surface/50">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient-secondary mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient mb-4">
             Sports & Hobbies
           </h2>
           <div className="w-24 h-1 bg-gradient-secondary mx-auto mt-8 rounded-full" />
@@ -82,28 +105,38 @@ export function HobbiesSection() {
         
         {/* Sports & Fitness */}
         <div className="mb-16">
-          <h3 className="text-2xl font-display font-semibold text-gradient mb-8 flex items-center gap-3">
-            <Trophy className="w-7 h-7 text-primary" />
+          <h3 className="text-2xl font-display font-semibold text-gradient-secondary mb-8 flex items-center gap-3">
+            <Trophy className="w-7 h-7 text-secondary" />
             Sports & Fitness
           </h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {sports.map((sport, index) => (
-              <Card 
-                key={sport.name}
-                className="card-hover p-6 bg-gradient-surface border-card-border/50 group"
-                style={{ animationDelay: `${index * 150}ms` }}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-xl bg-gradient-primary group-hover:bg-gradient-secondary transition-all duration-300">
-                    <sport.icon className="w-6 h-6 text-primary-foreground" />
+            {sports.map((sport, index) => {
+              const IconComponent = sport.icon as LucideIcon;
+              return (
+                <Card 
+                  key={sport.name}
+                  className="p-6 bg-gradient-surface border-card-border/50"
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  <div className="flex items-center gap-3">
+                    {sport.isImage ? (
+                      <img 
+                        src={sport.icon as string} 
+                        alt={sport.name}
+                        className="w-8 h-8 object-contain brightness-0 invert opacity-80"
+                        style={{ filter: 'brightness(0) saturate(100%) invert(70%) sepia(98%) saturate(2498%) hue-rotate(160deg) brightness(101%) contrast(101%)' }}
+                      />
+                    ) : (
+                      <IconComponent className="w-8 h-8 text-primary" />
+                    )}
+                    <h4 className="font-display font-semibold text-foreground">
+                      {sport.name}
+                    </h4>
                   </div>
-                  <h4 className="font-display font-semibold text-foreground group-hover:text-gradient transition-colors duration-300">
-                    {sport.name}
-                  </h4>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              );
+            })}
           </div>
         </div>
         
@@ -115,22 +148,32 @@ export function HobbiesSection() {
           </h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {hobbies.map((hobby, index) => (
-              <Card 
-                key={hobby.name}
-                className="card-hover p-6 bg-surface border-card-border/50 group"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="p-3 rounded-xl bg-gradient-secondary group-hover:bg-gradient-primary transition-all duration-300">
-                    <hobby.icon className="w-6 h-6 text-secondary-foreground" />
+            {hobbies.map((hobby, index) => {
+              const IconComponent = hobby.icon as LucideIcon;
+              return (
+                <Card 
+                  key={hobby.name}
+                  className="p-6 bg-surface border-card-border/50"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
+                  <div className="flex items-center gap-3">
+                    {hobby.isImage ? (
+                      <img 
+                        src={hobby.icon as string} 
+                        alt={hobby.name}
+                        className="w-8 h-8 object-contain brightness-0 invert opacity-80"
+                        style={{ filter: 'brightness(0) saturate(100%) invert(70%) sepia(98%) saturate(2498%) hue-rotate(160deg) brightness(101%) contrast(101%)' }}
+                      />
+                    ) : (
+                      <IconComponent className="w-8 h-8 text-primary" />
+                    )}
+                    <h4 className="font-display font-semibold text-foreground">
+                      {hobby.name}
+                    </h4>
                   </div>
-                  <h4 className="font-display font-semibold text-foreground group-hover:text-gradient transition-colors duration-300">
-                    {hobby.name}
-                  </h4>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              );
+            })}
           </div>
         </div>
       </div>

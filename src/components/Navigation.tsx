@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { Menu, X, ArrowUp } from 'lucide-react';
 
 interface NavigationProps {
@@ -10,18 +11,33 @@ export function Navigation({ scrollToSection }: NavigationProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [hasPassedToc, setHasPassedToc] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   const navItems = [
     { id: 'hero', label: 'Home' },
     { id: 'about', label: 'About' },
     { id: 'projects', label: 'Projects' },
     { id: 'skills', label: 'Skills' },
+    { id: 'design-process', label: 'Process' },
     { id: 'contact', label: 'Contact' }
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      
+      // Calculate scroll progress
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const currentProgress = (window.scrollY / scrollHeight) * 100;
+      setScrollProgress(currentProgress);
+      
+      // Check if user has scrolled past the portfolio navigation section
+      const tocSection = document.getElementById('toc');
+      if (tocSection) {
+        const rect = tocSection.getBoundingClientRect();
+        setHasPassedToc(rect.bottom < 0);
+      }
       
       // Update active section based on scroll position
       const sections = navItems.map(item => document.getElementById(item.id));
@@ -49,6 +65,10 @@ export function Navigation({ scrollToSection }: NavigationProps) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const scrollToPortfolioNav = () => {
+    scrollToSection('toc');
+  };
+
   return (
     <>
       {/* Main Navigation */}
@@ -74,10 +94,12 @@ export function Navigation({ scrollToSection }: NavigationProps) {
                   key={item.id}
                   variant="ghost"
                   onClick={() => handleNavClick(item.id)}
-                  className={`link-underline px-4 py-2 text-sm font-medium transition-all duration-300 ${
+                  className={`link-underline px-4 py-2 text-sm font-bold ${
+                    item.id === 'contact' ? 'text-white hover:text-white' : 'text-primary hover:text-primary'
+                  } hover:bg-transparent transition-all duration-300 ${
                     activeSection === item.id
-                      ? 'text-primary bg-primary/10'
-                      : 'text-muted-foreground hover:text-foreground'
+                      ? 'bg-primary/10'
+                      : ''
                   }`}
                 >
                   {item.label}
@@ -90,27 +112,35 @@ export function Navigation({ scrollToSection }: NavigationProps) {
               variant="ghost"
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 text-muted-foreground hover:text-foreground"
+              className="md:hidden text-muted-foreground hover:text-foreground"
+              style={{ minWidth: '48px', minHeight: '48px', padding: 'var(--space-sm)' }}
             >
-              {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {isMobileMenuOpen ? <X style={{ width: '24px', height: '24px' }} /> : <Menu style={{ width: '24px', height: '24px' }} />}
             </Button>
           </div>
         </div>
         
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden bg-background/95 backdrop-blur-md border-b border-border/50 shadow-strong">
-            <div className="px-6 py-4 space-y-2">
+          <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-lg">
+            <div style={{ padding: 'var(--space-md) var(--space-lg)', display: 'flex', flexDirection: 'column', gap: 'var(--space-xs)' }}>
               {navItems.slice(1).map((item) => (
                 <Button
                   key={item.id}
                   variant="ghost"
                   onClick={() => handleNavClick(item.id)}
-                  className={`w-full justify-start px-4 py-3 text-sm font-medium transition-all duration-300 ${
-                    activeSection === item.id
-                      ? 'text-primary bg-primary/10'
-                      : 'text-muted-foreground hover:text-foreground'
+                  className={`w-full justify-start text-left font-bold transition-colors duration-300 ${
+                    item.id === 'contact' ? 'hover:bg-secondary/10' : 'hover:bg-primary/10'
+                  } ${
+                    activeSection === item.id 
+                      ? item.id === 'contact' 
+                        ? 'bg-secondary/10 text-secondary' 
+                        : 'bg-primary/10 text-primary'
+                      : item.id === 'contact' 
+                        ? 'text-secondary' 
+                        : 'text-foreground'
                   }`}
+                  style={{ minHeight: '48px', fontSize: 'var(--text-base)', padding: 'var(--space-sm) var(--space-md)' }}
                 >
                   {item.label}
                 </Button>
@@ -120,22 +150,65 @@ export function Navigation({ scrollToSection }: NavigationProps) {
         )}
       </nav>
       
-      {/* Scroll to Top Button */}
-      {isScrolled && (
-        <Button
-          onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 btn-magnetic w-12 h-12 rounded-full bg-gradient-primary text-primary-foreground border-0 shadow-glow p-0"
-        >
-          <ArrowUp className="w-5 h-5" />
-        </Button>
-      )}
+      {/* Floating Buttons with Tooltips */}
+      <TooltipProvider delayDuration={500}>
+        {/* Portfolio Navigation Button */}
+        {hasPassedToc && (
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                onClick={scrollToPortfolioNav}
+                className="fixed z-50 btn-magnetic rounded-full bg-gradient-to-r from-amber-500 to-gray-400 text-white border-0 shadow-glow p-0"
+                style={{ 
+                  bottom: isScrolled ? 'clamp(4.5rem, 10vw, 6rem)' : 'clamp(1rem, 3vw, 1.5rem)',
+                  right: 'clamp(1rem, 3vw, 1.5rem)',
+                  width: 'clamp(48px, 6vw, 56px)',
+                  height: 'clamp(48px, 6vw, 56px)'
+                }}
+              >
+                <div style={{ width: 'clamp(20px, 3vw, 24px)', height: 'clamp(20px, 3vw, 24px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <Menu className="w-full h-full" />
+                </div>
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent side="left">
+              <p>Return to Menu</p>
+            </TooltipContent>
+          </Tooltip>
+        )}
+
+        {/* Scroll to Top Button */}
+        {isScrolled && (
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                onClick={scrollToTop}
+                className="fixed z-50 btn-magnetic rounded-full bg-gradient-primary text-primary-foreground border-0 shadow-glow p-0"
+                style={{ 
+                  bottom: 'clamp(1rem, 3vw, 1.5rem)',
+                  right: 'clamp(1rem, 3vw, 1.5rem)',
+                  width: 'clamp(48px, 6vw, 56px)',
+                  height: 'clamp(48px, 6vw, 56px)'
+                }}
+              >
+                <div style={{ width: 'clamp(20px, 3vw, 24px)', height: 'clamp(20px, 3vw, 24px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <ArrowUp className="w-full h-full" />
+                </div>
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent side="left">
+              <p>Return to Top</p>
+            </TooltipContent>
+          </Tooltip>
+        )}
+      </TooltipProvider>
       
       {/* Progress Indicator */}
       <div className="fixed top-0 left-0 right-0 z-40 h-1 bg-surface">
         <div 
           className="h-full bg-gradient-primary transition-all duration-300 ease-out"
           style={{
-            width: `${(window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100}%`
+            width: `${scrollProgress}%`
           }}
         />
       </div>
