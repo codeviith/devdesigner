@@ -19,7 +19,7 @@ export function ContactSection() {
       value: "placeholder@gmail.com",
       icon: Mail,
       primary: true,
-      description: "Best for project inquiries and detailed discussions",
+      description: "Best way to reach me directly",
       action: "mailto:placeholder@gmail.com",
     },
     {
@@ -27,7 +27,7 @@ export function ContactSection() {
       value: "(xxx)xxx-xxxx",
       icon: Phone,
       primary: false,
-      description: "Available for consultations",
+      description: "Available to discuss opportunities",
       action: "#",
     },
     {
@@ -35,7 +35,7 @@ export function ContactSection() {
       value: "New York (willing to relocate)",
       icon: MapPin,
       primary: false,
-      description: "Open to local meetings and remote collaboration",
+      description: "Based in NYC — open to relocation and remote roles",
       action: "#",
     },
     {
@@ -43,7 +43,7 @@ export function ContactSection() {
       value: "View LinkedIn",
       icon: Linkedin,
       primary: false,
-      description: "Professional network and portfolio",
+      description: "Professional profile and experience",
       action: "https://www.linkedin.com/in/kevinlin128",
     },
   ];
@@ -78,7 +78,7 @@ export function ContactSection() {
             </div>
 
             <div className="flex justify-center">
-              <ReCAPTCHA sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI" onChange={handleRecaptchaChange} />
+              <ReCAPTCHA sitekey="6LdvjBUsAAAAAJoqO1lGtQwQcd4olSE0ffTiTJb-" onChange={handleRecaptchaChange} />
             </div>
           </Card>
         ) : (
