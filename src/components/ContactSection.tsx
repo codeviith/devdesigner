@@ -23,12 +23,12 @@ export function ContactSection() {
       action: "mailto:placeholder@gmail.com",
     },
     {
-      type: "Phone",
-      value: "(xxx)xxx-xxxx",
-      icon: Phone,
+      type: "LinkedIn",
+      value: "View LinkedIn",
+      icon: Linkedin,
       primary: false,
-      description: "Available to discuss opportunities",
-      action: "#",
+      description: "Professional profile and experience",
+      action: "https://www.linkedin.com/in/kevinlin128",
     },
     {
       type: "Location",
@@ -37,14 +37,6 @@ export function ContactSection() {
       primary: false,
       description: "Based in NYC — open to relocation and remote roles",
       action: "#",
-    },
-    {
-      type: "LinkedIn",
-      value: "View LinkedIn",
-      icon: Linkedin,
-      primary: false,
-      description: "Professional profile and experience",
-      action: "https://www.linkedin.com/in/kevinlin128",
     },
   ];
 
@@ -63,6 +55,9 @@ export function ContactSection() {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Open to roles in CAD, product design and development, prototyping, and R&D
           </p>
+          {/* <p className="text-base text-muted-foreground mt-2">
+            Email is the best way to reach me.
+          </p> */}
           <div className="w-24 h-1 bg-gradient-secondary mx-auto mt-8 rounded-full" />
         </div>
 
@@ -97,16 +92,19 @@ export function ContactSection() {
                       <div key={method.type} className="group" style={{ animationDelay: `${index * 100}ms` }}>
                         <Component
                           {...(!isNonClickable && { href: method.action })}
-                          className={`block p-4 rounded-xl border border-border/50 bg-surface transition-all duration-300 ${
-                            !isNonClickable ? "card-hover group hover:scale-105 cursor-pointer" : "cursor-default"
-                          }`}
+                          className={`block p-4 rounded-xl border border-border/50 bg-surface transition-all duration-300 ${!isNonClickable ? "card-hover group hover:scale-105 cursor-pointer" : "cursor-default"
+                            }`}
                         >
                           <div className="flex items-start gap-4">
+
+                            {/* Icon */}
                             <div
                               className={`p-3 rounded-lg bg-gradient-primary ${!isNonClickable && "group-hover:scale-110"} transition-transform duration-300`}
                             >
                               <method.icon className="w-5 h-5 text-primary-foreground" />
                             </div>
+
+                            {/* Content */}
                             <div className="flex-1 space-y-2">
                               <div className="flex items-center gap-2">
                                 <h4 className="font-semibold text-foreground">{method.type}</h4>
@@ -116,11 +114,21 @@ export function ContactSection() {
                                   </Badge>
                                 )}
                               </div>
+
+                              {/* Value */}
                               <p
                                 className={`text-sm text-primary font-mono ${!isNonClickable ? "link-underline-on-card-hover" : ""}`}
                               >
                                 {method.value}
                               </p>
+
+                              {/* Description */}
+                              {(method.type === "Email" || method.type === "LinkedIn") && (
+                                <p className="text-sm text-muted-foreground italic">
+                                  {method.description}
+                                </p>
+                              )}
+
                             </div>
                             {!isNonClickable && (
                               <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 group-hover:text-secondary transition-all duration-300" />

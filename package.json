@@ -8,7 +8,8 @@
     "build": "vite build",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && rm -rf docs && mkdir docs && cp dist/index.html docs/index.html && cp -r dist/assets docs/assets && git add docs && git commit -m \"Deploy $(date '+%Y-%m-%d %H:%M:%S')\" && git push"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
