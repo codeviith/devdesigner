@@ -123,7 +123,7 @@ export function ContactSection() {
                               </p>
 
                               {/* Description */}
-                              {(method.type === "Email" || method.type === "LinkedIn") && (
+                              {["Email", "LinkedIn"].includes(method.type) && (
                                 <p className="text-sm text-muted-foreground italic">
                                   {method.description}
                                 </p>
