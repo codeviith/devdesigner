@@ -26,7 +26,7 @@ export function ParallaxBackdrop() {
         alt=""
         className="absolute object-cover rounded-lg opacity-50 border border-primary/20"
         style={{ 
-          top: '15%', 
+          top: '20%', 
           left: 'clamp(2%, 8%, 8%)',
           width: 'clamp(8rem, 15vw, 14rem)',
           height: 'clamp(8rem, 15vw, 14rem)'
@@ -37,7 +37,7 @@ export function ParallaxBackdrop() {
         alt=""
         className="absolute object-cover rounded-lg opacity-60 border border-primary/20"
         style={{ 
-          top: '60%', 
+          top: '70%', 
           right: 'clamp(2%, 10%, 10%)',
           width: 'clamp(9rem, 16vw, 15rem)',
           height: 'clamp(9rem, 16vw, 15rem)'
@@ -48,7 +48,7 @@ export function ParallaxBackdrop() {
         alt=""
         className="absolute object-cover rounded-lg opacity-50 border border-primary/20"
         style={{ 
-          top: '105%', 
+          top: '120%', 
           left: 'clamp(5%, 15%, 15%)',
           width: 'clamp(10rem, 18vw, 16rem)',
           height: 'clamp(10rem, 18vw, 16rem)'
@@ -59,7 +59,7 @@ export function ParallaxBackdrop() {
         alt=""
         className="absolute object-cover rounded-lg opacity-55 border border-primary/20"
         style={{ 
-          top: '150%', 
+          top: '170%', 
           right: 'clamp(2%, 12%, 12%)',
           width: 'clamp(8rem, 15vw, 14rem)',
           height: 'clamp(8rem, 15vw, 14rem)'
@@ -70,7 +70,7 @@ export function ParallaxBackdrop() {
         alt=""
         className="absolute object-cover rounded-lg opacity-50 border border-primary/20"
         style={{ 
-          top: '195%', 
+          top: '220%', 
           left: 'clamp(2%, 8%, 8%)',
           width: 'clamp(9rem, 16vw, 15rem)',
           height: 'clamp(9rem, 16vw, 15rem)'

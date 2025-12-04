@@ -83,17 +83,18 @@ export function ContactSection() {
               <Card className="glass p-8 border-card-border/50">
                 <h3 className="text-2xl font-display font-semibold text-gradient mb-6">Get In Touch</h3>
 
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="flex flex-wrap justify-center gap-6">
                   {contactMethods.map((method, index) => {
-                    const isNonClickable = method.type === "Location" || method.type === "Phone";
+                    const isNonClickable = method.type === "Location";
                     const Component = isNonClickable ? "div" : "a";
 
                     return (
                       <div key={method.type} className="group" style={{ animationDelay: `${index * 100}ms` }}>
                         <Component
                           {...(!isNonClickable && { href: method.action })}
-                          className={`block p-4 rounded-xl border border-border/50 bg-surface transition-all duration-300 ${!isNonClickable ? "card-hover group hover:scale-105 cursor-pointer" : "cursor-default"
-                            }`}
+                          className={`block p-4 rounded-xl border border-border/50 bg-surface transition-all duration-300 
+                            ${!isNonClickable ? "card-hover group hover:scale-105 cursor-pointer" : "cursor-default"}
+                            w-full sm:w-[320px] md:w-[360px]`}
                         >
                           <div className="flex items-start gap-4">
 
