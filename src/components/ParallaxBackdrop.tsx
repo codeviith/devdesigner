@@ -22,7 +22,7 @@ export function ParallaxBackdrop() {
     >
       {/* Image 1 */}
       <img
-        src="/prod pics/Riser + Headlight Fixture Exploded View.png"
+        src="Prod Pics/Riser + Headlight Fixture Exploded View.png"
         alt=""
         className="
           absolute
@@ -40,7 +40,7 @@ export function ParallaxBackdrop() {
 
       {/* Image 2 */}
       <img
-        src="/prod pics/E-Board (Parallax).png"
+        src="Prod Pics/E-Board (Parallax).png"
         alt=""
         className="
           absolute
@@ -58,7 +58,7 @@ export function ParallaxBackdrop() {
 
       {/* Image 3 */}
       <img
-        src="/prod pics/DYPLB (Parallax3).png"
+        src="Prod Pics/DYPLB (Parallax3).png"
         alt=""
         className="
           absolute
@@ -76,7 +76,7 @@ export function ParallaxBackdrop() {
 
       {/* Image 4 */}
       <img
-        src="/prod pics/CoreXY (Parallax).png"
+        src="Prod Pics/CoreXY (Parallax).png"
         alt=""
         className="
           absolute
@@ -85,7 +85,7 @@ export function ParallaxBackdrop() {
           object-contain
           h-auto"
         style={{
-          top: '220%',
+          top: '235%',
           right: 'clamp(3%, 10%, 10%)',
           width: 'clamp(12rem, 22vw, 22rem)',
           // height: 'clamp(10rem, 18vw, 16rem)'
@@ -94,7 +94,7 @@ export function ParallaxBackdrop() {
 
       {/* Image 5 */}
       <img 
-        src="/prod pics/EUTV (Parallax5).png" 
+        src="Prod Pics/EUTV (Parallax5).png" 
         alt=""
         className="
           absolute
@@ -103,7 +103,7 @@ export function ParallaxBackdrop() {
           object-contain
           h-auto"
         style={{ 
-          top: '290%', 
+          top: '320%', 
           left: 'clamp(5%, 15%, 15%)',
           width: 'clamp(18rem, 30vw, 30rem)',
           // height: 'clamp(10rem, 18vw, 16rem)'

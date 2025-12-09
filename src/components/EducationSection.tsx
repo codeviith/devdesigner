@@ -19,7 +19,7 @@ import {
   Trophy,
   Star
 } from 'lucide-react';
-import certificateFS from "/Certificates/FS - SE Certificate of Completion.jpg";
+// import certificateFS from "/Certificates/FS - SE Certificate of Completion.jpg";
 
 export function EducationSection() {
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null);
@@ -248,7 +248,7 @@ export function EducationSection() {
             {/* Certificate Image */}
             <div className="w-full max-h-[60vh] flex items-center justify-center bg-muted/10 rounded-md border border-border/30 overflow-hidden">
               <img
-                src={certificateFS}
+                src="Certificates/FS - SE Certificate of Completion.jpg"
                 alt="Flatiron School Full Stack Software Engineering Certificate of Completion"
                 className="max-w-full max-h-[60vh] object-contain rounded-md"
               />
