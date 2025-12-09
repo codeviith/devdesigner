@@ -95,7 +95,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
             <div className="flex justify-center">
               <Avatar className="w-[clamp(110px,20vw,160px)] h-[clamp(110px,20vw,160px)] shadow-xl ring-1 ring-border bg-muted/30">
                 <AvatarImage
-                  src="src/assets/Profile Pic/Lin, Kevin. Photo (red, wht bckgnd).png"
+                  src="/Profile Pic/Lin, Kevin. Photo (red, wht bckgnd).png"
                   alt="Kevin Lin profile picture"
                   loading="eager"
                   decoding="async"

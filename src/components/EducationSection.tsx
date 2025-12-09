@@ -19,7 +19,7 @@ import {
   Trophy,
   Star
 } from 'lucide-react';
-import certificateFS from "@/assets/Certificates/FS - SE Certificate of Completion.jpg";
+import certificateFS from "/Certificates/FS - SE Certificate of Completion.jpg";
 
 export function EducationSection() {
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null);
