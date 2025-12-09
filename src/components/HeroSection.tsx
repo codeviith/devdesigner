@@ -81,22 +81,22 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
     <section
       id="hero"
       ref={heroRef}
-      className="relative z-10 min-h-screen flex items-center justify-center overflow-hidden pt-16"
+      className="relative z-10 min-h-screen flex items-center justify-center pt-16 pb-16 md:pt-20 md:pb-20"
     >
       {/* Overlay for better content readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background/60 via-background/40 to-background/50" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background/30 via-background/20 to-background/25" />
 
       {/* Main content */}
-      <div className="relative z-20 text-center max-w-6xl mx-auto px-6 -mt-20">
+      <div className="relative z-20 text-center max-w-6xl mx-auto px-6 -mt-10">
         <div className="space-y-6">
           {/* Name and Title */}
           <div className="space-y-6">
-            {/* Profile picture placeholder */}
+            {/* Profile picture */}
             <div className="flex justify-center">
-              <Avatar className="w-[clamp(120px,25vw,200px)] h-[clamp(120px,25vw,200px)] shadow-xl ring-1 ring-border bg-muted/30">
+              <Avatar className="w-[clamp(110px,20vw,160px)] h-[clamp(110px,20vw,160px)] shadow-xl ring-1 ring-border bg-muted/30">
                 <AvatarImage
-                  src="/placeholder.svg"
-                  alt="Kevin Lin profile picture placeholder"
+                  src="src/assets/Profile Pic/Lin, Kevin. Photo (red, wht bckgnd).png"
+                  alt="Kevin Lin profile picture"
                   loading="eager"
                   decoding="async"
                   fetchPriority="high"
@@ -104,7 +104,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
                 <AvatarFallback>KL</AvatarFallback>
               </Avatar>
             </div>
-            <h1 className="font-display font-bold text-gradient title-underglow text-[clamp(2.5rem,8vw,5rem)] leading-tight">
+            <h1 className="font-display font-bold text-gradient title-underglow text-[clamp(2.25rem,6.5vw,4rem)] leading-tight">
               Kevin Lin
             </h1>
             <div className="flex items-center justify-center gap-2 md:gap-4 flex-wrap">
@@ -137,7 +137,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
           <div className="text-sm">&nbsp;</div>
 
           {/* Interactive elements */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mt-8 md:mt-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-5 sm:gap-7 md:gap-15 mt-6 md:mt-10">
             <Button
               onClick={() => scrollToSection("projects")}
               className="btn-magnetic bg-gradient-secondary text-primary-foreground border-0 px-6 md:px-8 py-4 md:py-6 text-base md:text-lg font-medium rounded-xl hover:shadow-[0_0_20px_hsl(var(--secondary)/0.8)] transition-shadow duration-300"

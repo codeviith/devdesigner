@@ -1,9 +1,9 @@
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { 
-  Wrench, 
-  Palette, 
-  Code, 
+import {
+  Wrench,
+  Palette,
+  Code,
   Layers,
   MousePointer,
   Cpu,
@@ -27,12 +27,37 @@ import cadModelingCubeIcon from '@/assets/icons/cad-modeling-cube.png';
 
 export function SkillsSection() {
   const keyHighlights = [
-    { icon: cadModelingCubeIcon, title: 'CAD Modeling', desc: 'Parametric 3D parts, assemblies, and detailed drawings', isImage: true },
-    { icon: Package, title: 'Product Design', desc: 'From concept to refined, manufacturable forms' },
-    { icon: dfmCompassIcon, title: 'Design for Manufacturing (DFM)', desc: 'Optimized for cost, quality, and throughput', isImage: true },
-    { icon: FlaskConical, title: 'Research & Development (R&D)', desc: 'Rapid iteration, testing, and validation' },
-    { icon: Factory, title: 'Small-Scale Manufacturing & Post-Processing', desc: 'CNC, 3D printing, finishing workflows' },
-    { icon: TestTube, title: 'Prototyping', desc: 'Functional and appearance prototype development' }
+    {
+      icon: cadModelingCubeIcon,
+      title: 'CAD Modeling',
+      desc: 'Parametric 3D parts, assemblies, and detailed drawings',
+      isImage: true
+    },
+    {
+      icon: Package,
+      title: 'Product Design', desc: 'From concept to refined, manufacturable forms'
+    },
+    {
+      icon: dfmCompassIcon,
+      title: 'Design for Manufacturing (DFM)',
+      desc: 'Optimized for cost, quality, and throughput',
+      isImage: true
+    },
+    {
+      icon: FlaskConical,
+      title: 'Research & Development (R&D)',
+      desc: 'Rapid iteration, testing, and validation'
+    },
+    {
+      icon: Factory,
+      title: 'Small-Scale Manufacturing & Post-Processing',
+      desc: 'CNC, 3D printing, finishing workflows'
+    },
+    {
+      icon: TestTube,
+      title: 'Prototyping',
+      desc: 'Functional and appearance prototype development'
+    }
   ];
 
   const designValues = [
@@ -60,11 +85,26 @@ export function SkillsSection() {
       isImage: true,
       color: 'text-primary',
       skills: [
-        { name: 'Fusion 360', level: 95, description: 'Cloud-based parametric modeling' },
-        { name: 'SolidWorks', level: 90, description: 'Advanced 3D modeling and assemblies' },
-        { name: 'OnShape', level: 90, description: 'Collaborative cloud CAD platform' },
-        { name: 'AutoCAD', level: 85, description: '2D technical drawings and documentation' },
-        { name: 'Blender', level: 70, description: '3D modeling and animation (WIP)' }
+        {
+          name: 'Fusion 360',
+          description: 'Cloud-based parametric modeling'
+        },
+        {
+          name: 'SolidWorks',
+          description: 'Advanced 3D modeling and assemblies'
+        },
+        {
+          name: 'OnShape',
+          description: 'Collaborative cloud CAD platform'
+        },
+        {
+          name: 'AutoCAD',
+          description: '2D technical drawings and documentation'
+        },
+        {
+          name: 'Blender',
+          description: '3D modeling and animation (WIP)'
+        }
       ]
     },
     {
@@ -72,11 +112,26 @@ export function SkillsSection() {
       icon: Layers,
       color: 'text-secondary',
       skills: [
-        { name: 'FDM Printing', level: 95, description: 'PLA, ABS, PETG, TPU, PEEK, PLA-CF' },
-        { name: 'SLA Printing', level: 90, description: 'Resin-based additive manufacturing' },
-        { name: 'Slicer Software', level: 92, description: 'PrusaSlicer, Cura, Simplify3D, Pronterface' },
-        { name: 'CNC Machining', level: 70, description: 'Basic CNC programming and operation' },
-        { name: 'Post-Processing', level: 88, description: 'Sanding, painting, assembly, smoothing' }
+        {
+          name: 'FDM Printing',
+          description: 'PLA, ABS, PETG, TPU, PEEK, PLA-CF'
+        },
+        {
+          name: 'SLA Printing',
+          description: 'Resin-based additive manufacturing'
+        },
+        {
+          name: 'Slicer Software',
+          description: 'PrusaSlicer, Cura, Simplify3D, Pronterface'
+        },
+        {
+          name: 'CNC Machining',
+          description: 'Basic CNC programming and operation'
+        },
+        {
+          name: 'Post-Processing',
+          description: 'Sanding, painting, assembly, smoothing'
+        }
       ]
     },
     {
@@ -84,10 +139,22 @@ export function SkillsSection() {
       icon: Factory,
       color: 'text-accent',
       skills: [
-        { name: 'GD&T', level: 85, description: 'Geometric dimensioning and tolerancing' },
-        { name: 'Manufacturing', level: 88, description: 'DFM and production optimization' },
-        { name: 'Prototyping', level: 92, description: 'Rapid iteration and testing' },
-        { name: 'Fabrication', level: 85, description: 'Woodworking, metalworking, welding' }
+        {
+          name: 'GD&T',
+          description: 'Geometric dimensioning and tolerancing'
+        },
+        {
+          name: 'Manufacturing',
+          description: 'DFM and production optimization'
+        },
+        {
+          name: 'Prototyping',
+          description: 'Rapid iteration and testing'
+        },
+        {
+          name: 'Fabrication',
+          description: 'Woodworking, metalworking, welding'
+        }
       ]
     },
     {
@@ -95,16 +162,33 @@ export function SkillsSection() {
       icon: Code,
       color: 'text-primary',
       skills: [
-        { name: 'Python', level: 75, description: 'Automation and scripting' },
-        { name: 'JavaScript', level: 75, description: 'Web development and automation' },
-        { name: 'React', level: 70, description: 'Frontend web applications' },
-        { name: 'HTML/CSS', level: 80, description: 'Web design and styling' },
-        { name: 'Flask', level: 65, description: 'Python web framework' },
-        { name: 'Unity', level: 65, description: 'Game development and simulation' },
-        { name: 'G-Code', level: 85, description: 'CNC and 3D printer programming' },
-        { name: 'ArduinoIDE', level: 80, description: 'Embedded systems and prototyping' }
+        {
+          name: 'JavaScript | React',
+          description: 'Frontend web applications, UI logic, and interactivity'
+        },
+        {
+          name: 'Python | Flask',
+          description: 'Automation, scripting, and backend APIs'
+        },
+        {
+          name: 'C# | Unity',
+          description: 'Interactive simulations, tools, and game prototyping'
+        },
+        {
+          name: 'HTML/CSS',
+          description: 'Responsive layout, styling, and component-driven UI'
+        },
+        {
+          name: 'G-Code | M-code',
+          description: 'CNC and 3D printer programming and tuning'
+        },
+        {
+          name: 'Arduino IDE',
+          description: 'Embedded systems and hardware prototyping'
+        }
       ]
-    }
+    },
+
   ];
 
   const softSkills = [
@@ -137,7 +221,7 @@ export function SkillsSection() {
           </h3>
           <div className="grid md:grid-cols-2 gap-4">
             {keyHighlights.map((item) => (
-              <Card 
+              <Card
                 key={item.title}
                 className="p-6 bg-gradient-surface border-card-border/50"
               >
@@ -166,7 +250,7 @@ export function SkillsSection() {
           </h3>
           <div className="space-y-4">
             {designValues.map((value, index) => (
-              <Card 
+              <Card
                 key={value.title}
                 className="p-6 bg-gradient-surface border-card-border/50"
                 style={{ animationDelay: `${index * 150}ms` }}
@@ -193,11 +277,11 @@ export function SkillsSection() {
         <h3 className="text-2xl font-display font-semibold mb-6 text-gradient-secondary text-center">
           Skills
         </h3>
-        
+
         {/* Technical Skills Grid */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
           {skillCategories.map((category, categoryIndex) => (
-            <Card 
+            <Card
               key={category.title}
               className="p-8 bg-gradient-surface border-card-border/50"
               style={{ animationDelay: `${categoryIndex * 100}ms` }}
@@ -205,8 +289,8 @@ export function SkillsSection() {
               <div className="flex items-center gap-3 mb-6">
                 <div className="p-3 rounded-xl bg-gradient-primary">
                   {category.isImage ? (
-                    <img 
-                      src={category.icon as string} 
+                    <img
+                      src={category.icon as string}
                       alt={category.title}
                       className="w-6 h-6 object-contain"
                     />
@@ -218,10 +302,10 @@ export function SkillsSection() {
                   {category.title}
                 </h3>
               </div>
-              
+
               <div className="grid gap-3">
                 {category.skills.map((skill, skillIndex) => (
-                  <div 
+                  <div
                     key={skill.name}
                     className="p-4 rounded-lg border border-border/40 bg-card"
                     style={{ animationDelay: `${(categoryIndex * 4 + skillIndex) * 100}ms` }}
@@ -234,18 +318,18 @@ export function SkillsSection() {
             </Card>
           ))}
         </div>
-        
+
         {/* Soft Skills */}
         <div className="mb-16">
           <h3 className="text-2xl font-display font-semibold text-gradient-secondary mb-8 text-center">
             Professional Competencies
           </h3>
-          
+
           <div className="flex flex-wrap justify-center gap-3">
             {softSkills.map((skill, index) => (
-              <Badge 
+              <Badge
                 key={skill}
-                variant="secondary" 
+                variant="secondary"
                 className="px-4 py-2 text-sm bg-card/80 text-foreground border-border/60 hover:bg-card/80"
                 style={{ animationDelay: `${index * 50}ms` }}
               >
@@ -254,7 +338,7 @@ export function SkillsSection() {
             ))}
           </div>
         </div>
-        
+
         {/* Tools & Software */}
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-display font-semibold text-gradient-secondary mb-8">
@@ -269,19 +353,18 @@ export function SkillsSection() {
               { name: 'React', icon: SiReact, type: 'component' },
               { name: 'Arduino', icon: SiArduino, type: 'component' }
             ].map((tool, index) => (
-              <Card 
+              <Card
                 key={tool.name}
                 className="p-6 bg-surface border-card-border/50 text-center hover:bg-surface/80 transition-colors"
                 style={{ animationDelay: `${index * 75}ms` }}
               >
                 {tool.type === 'image' ? (
-                  <img 
-                    src={tool.icon as string} 
+                  <img
+                    src={tool.icon as string}
                     alt={`${tool.name} logo`}
-                    className={`w-8 h-8 mx-auto mb-3 object-contain ${
-                      tool.name === 'SOLIDWORKS' ? 'solidworks-cyan-filter' : 
+                    className={`w-8 h-8 mx-auto mb-3 object-contain ${tool.name === 'SOLIDWORKS' ? 'solidworks-cyan-filter' :
                       tool.name === 'Onshape' ? 'onshape-cyan-filter' : ''
-                    }`}
+                      }`}
                   />
                 ) : (
                   <tool.icon className="w-8 h-8 text-primary mx-auto mb-3" />

@@ -12,68 +12,101 @@ export function ParallaxBackdrop() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Calculate parallax transform - moves at 20% of scroll speed for smoother motion
+  // Calculate parallax transform --> moves at n% of scroll speed
   const parallaxOffset = scrollY * 0.2;
 
   return (
-    <div 
-      className="fixed inset-0 z-50 pointer-events-none transition-transform duration-100 ease-out"
+    <div
+      className="fixed inset-0 z-[-10] pointer-events-none transition-transform duration-100 ease-out"
       style={{ transform: `translateY(-${parallaxOffset}px)` }}
     >
-      {/* 5 images spread evenly throughout the page - fully responsive sizing */}
-      <img 
-        src="/placeholder.svg" 
+      {/* Image 1 */}
+      <img
+        src="src/assets/prod pics/Riser + Headlight Fixture Exploded View.png"
         alt=""
-        className="absolute object-cover rounded-lg opacity-50 border border-primary/20"
-        style={{ 
-          top: '20%', 
-          left: 'clamp(2%, 8%, 8%)',
-          width: 'clamp(8rem, 15vw, 14rem)',
-          height: 'clamp(8rem, 15vw, 14rem)'
+        className="
+          absolute
+          rounded-lg
+          opacity-100
+          object-contain
+          h-auto"
+        style={{
+          top: '12%',
+          left: 'clamp(3%, 10%, 10%)',
+          width: 'clamp(12rem, 20vw, 20rem)',
+          // height: 'clamp(15rem, 20vw, 15rem)'
         }}
       />
-      <img 
-        src="/placeholder.svg" 
+
+      {/* Image 2 */}
+      <img
+        src="src/assets/prod pics/E-Board (Parallax).png"
         alt=""
-        className="absolute object-cover rounded-lg opacity-60 border border-primary/20"
-        style={{ 
-          top: '70%', 
-          right: 'clamp(2%, 10%, 10%)',
-          width: 'clamp(9rem, 16vw, 15rem)',
-          height: 'clamp(9rem, 16vw, 15rem)'
+        className="
+          absolute
+          rounded-lg
+          opacity-90
+          object-contain
+          h-auto"
+        style={{
+          top: '65%',
+          right: 'clamp(3%, 10%, 10%)',
+          width: 'clamp(12rem, 22vw, 22rem)',
+          // height: 'clamp(9rem, 16vw, 15rem)'
         }}
       />
-      <img 
-        src="/placeholder.svg" 
+
+      {/* Image 3 */}
+      <img
+        src="src/assets/prod pics/DYPLB (Parallax3).png"
         alt=""
-        className="absolute object-cover rounded-lg opacity-50 border border-primary/20"
-        style={{ 
-          top: '120%', 
+        className="
+          absolute
+          rounded-lg
+          opacity-100
+          object-contain
+          h-auto"
+        style={{
+          top: '150%',
           left: 'clamp(5%, 15%, 15%)',
-          width: 'clamp(10rem, 18vw, 16rem)',
-          height: 'clamp(10rem, 18vw, 16rem)'
+          width: 'clamp(12rem, 22vw, 22rem)',
+          // height: 'clamp(10rem, 18vw, 16rem)'
         }}
       />
-      <img 
-        src="/placeholder.svg" 
+
+      {/* Image 4 */}
+      <img
+        src="src/assets/prod pics/CoreXY (Parallax).png"
         alt=""
-        className="absolute object-cover rounded-lg opacity-55 border border-primary/20"
-        style={{ 
-          top: '170%', 
-          right: 'clamp(2%, 12%, 12%)',
-          width: 'clamp(8rem, 15vw, 14rem)',
-          height: 'clamp(8rem, 15vw, 14rem)'
+        className="
+          absolute
+          rounded-lg
+          opacity-90
+          object-contain
+          h-auto"
+        style={{
+          top: '220%',
+          right: 'clamp(3%, 10%, 10%)',
+          width: 'clamp(12rem, 22vw, 22rem)',
+          // height: 'clamp(10rem, 18vw, 16rem)'
         }}
       />
+
+      {/* Image 5 */}
       <img 
-        src="/placeholder.svg" 
+        src="src/assets/prod pics/EUTV (Parallax5).png" 
         alt=""
-        className="absolute object-cover rounded-lg opacity-50 border border-primary/20"
+        className="
+          absolute
+          rounded-lg
+          opacity-90
+          object-contain
+          h-auto"
         style={{ 
-          top: '220%', 
-          left: 'clamp(2%, 8%, 8%)',
-          width: 'clamp(9rem, 16vw, 15rem)',
-          height: 'clamp(9rem, 16vw, 15rem)'
+          top: '290%', 
+          left: 'clamp(5%, 15%, 15%)',
+          width: 'clamp(18rem, 30vw, 30rem)',
+          // height: 'clamp(10rem, 18vw, 16rem)'
         }}
       />
     </div>

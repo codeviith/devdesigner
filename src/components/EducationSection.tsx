@@ -9,16 +9,17 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog';
-import { 
-  GraduationCap, 
-  Award, 
-  Calendar, 
+import {
+  GraduationCap,
+  Award,
+  Calendar,
   MapPin,
   ExternalLink,
   BookOpen,
   Trophy,
   Star
 } from 'lucide-react';
+import certificateFS from "@/assets/Certificates/FS - SE Certificate of Completion.jpg";
 
 export function EducationSection() {
   const [selectedCertificate, setSelectedCertificate] = useState<string | null>(null);
@@ -27,7 +28,7 @@ export function EducationSection() {
       degree: 'Full Stack Software Engineer',
       specialization: '',
       institution: 'Flatiron School',
-      location: '',
+      location: 'New York, NY',
       duration: '2023',
       gpa: '',
       highlights: [],
@@ -83,7 +84,7 @@ export function EducationSection() {
   const achievements: any[] = [];
 
   return (
-    <section id="education" className="py-20 px-6">
+    <section id="education" className="py-20 px-6 bg-surface/65">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient mb-4">
@@ -91,17 +92,17 @@ export function EducationSection() {
           </h2>
           <div className="w-24 h-1 bg-gradient-secondary mx-auto mt-8 rounded-full" />
         </div>
-        
+
         {/* Education */}
         <div className="mb-16">
           <h3 className="text-2xl font-display font-semibold text-gradient-secondary mb-8 flex items-center gap-3">
             <GraduationCap className="w-7 h-7 text-secondary" />
             Academic Background
           </h3>
-          
+
           <div className="space-y-8">
             {education.map((edu, index) => (
-              <div 
+              <div
                 key={edu.degree}
                 className="border-l-4 border-primary/30 pl-6 py-4"
                 style={{ animationDelay: `${index * 200}ms` }}
@@ -130,7 +131,7 @@ export function EducationSection() {
                       </div>
                     </div>
                   </div>
-                  
+
                   {edu.highlights.length > 0 && (
                     <div className="space-y-3">
                       <h5 className="font-semibold text-foreground">Key Achievements:</h5>
@@ -149,17 +150,17 @@ export function EducationSection() {
             ))}
           </div>
         </div>
-        
+
         {/* Certifications */}
         <div className="mb-16">
           <h3 className="text-2xl font-display font-semibold text-gradient-secondary mb-8 flex items-center gap-3">
             <Award className="w-7 h-7 text-secondary" />
             Professional Certifications & Training
           </h3>
-          
+
           <div className="space-y-8">
             {certifications.map((cert, index) => (
-              <div 
+              <div
                 key={cert.name}
                 className="border-l-4 border-primary/30 pl-6 py-4"
                 style={{ animationDelay: `${index * 100}ms` }}
@@ -172,20 +173,19 @@ export function EducationSection() {
                       </h4>
                       {cert.issuer && <p className="text-sm text-muted-foreground mt-1">{cert.issuer}</p>}
                     </div>
-                    <Badge 
-                      variant="outline" 
-                      className={`text-sm font-bold flex-shrink-0 border-2 px-3 py-1 ${
-                        cert.level.includes('Professional') || cert.level.includes('Black Belt') 
-                          ? 'border-primary text-primary' 
+                    <Badge
+                      variant="outline"
+                      className={`text-sm font-bold flex-shrink-0 border-2 px-3 py-1 ${cert.level.includes('Professional') || cert.level.includes('Black Belt')
+                          ? 'border-primary text-primary'
                           : cert.level.includes('Green Belt')
-                          ? 'border-secondary text-secondary'
-                          : 'border-accent text-accent'
-                      }`}
+                            ? 'border-secondary text-secondary'
+                            : 'border-accent text-accent'
+                        }`}
                     >
                       {cert.level}
                     </Badge>
                   </div>
-                  
+
                   <div className="space-y-2 text-xs text-muted-foreground">
                     <div className="flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
@@ -196,7 +196,7 @@ export function EducationSection() {
                       <span className="font-bold text-white">Description:</span> {cert.credentialId}
                     </div>
                   </div>
-                  
+
                   {cert.name === 'Full Stack Software Engineering Certificate' && (
                     <div className="mt-4">
                       <Button
@@ -209,14 +209,14 @@ export function EducationSection() {
                       </Button>
                     </div>
                   )}
-                  
+
                   <div>
                     <h6 className="font-semibold text-xs text-foreground mb-2">Skills Validated:</h6>
                     <div className="flex flex-wrap gap-1">
                       {cert.skills.map((skill) => (
-                        <Badge 
+                        <Badge
                           key={skill}
-                          variant="secondary" 
+                          variant="secondary"
                           className="text-xs bg-muted/20 text-muted-foreground border border-muted-foreground hover:bg-muted/20"
                         >
                           {skill}
@@ -229,7 +229,7 @@ export function EducationSection() {
             ))}
           </div>
         </div>
-        
+
       </div>
 
       {/* Certificate Modal */}
@@ -243,15 +243,15 @@ export function EducationSection() {
               Certificate of Completion
             </DialogDescription>
           </DialogHeader>
-          
+
           <div className="space-y-6 mt-6">
-            {/* Certificate Image Placeholder */}
-            <div className="aspect-[4/3] bg-muted/30 rounded-md flex items-center justify-center border border-border/30">
-              <div className="text-center space-y-2">
-                <div className="text-4xl">📜</div>
-                <p className="text-muted-foreground">Certificate Image</p>
-                <p className="text-sm text-muted-foreground/70">Placeholder for certificate photo</p>
-              </div>
+            {/* Certificate Image */}
+            <div className="w-full max-h-[60vh] flex items-center justify-center bg-muted/10 rounded-md border border-border/30 overflow-hidden">
+              <img
+                src={certificateFS}
+                alt="Flatiron School Full Stack Software Engineering Certificate of Completion"
+                className="max-w-full max-h-[60vh] object-contain rounded-md"
+              />
             </div>
 
             {/* Close Button */}
@@ -259,7 +259,7 @@ export function EducationSection() {
               <Button
                 onClick={() => setSelectedCertificate(null)}
                 className="w-full border-0 transition-all duration-300 hover:opacity-90"
-                style={{ 
+                style={{
                   background: 'var(--gradient-destructive)',
                   color: 'hsl(var(--foreground))'
                 }}

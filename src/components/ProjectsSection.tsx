@@ -175,7 +175,7 @@ export function ProjectsSection() {
   ];
 
   return (
-    <section id="projects" className="py-20 px-6 bg-surface/30 overflow-visible">
+    <section id="projects" className="py-20 px-6 bg-transparent">
       <div className="max-w-7xl mx-auto overflow-visible">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient mb-4">Featured Projects</h2>

@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-20 px-6 bg-surface/50">
+    <section id="about" className="py-20 px-6 bg-surface/65">
       <div className="max-w-6xl mx-auto">
         <div className="text-center" style={{ marginBottom: "var(--space-2xl)" }}>
           <h2
