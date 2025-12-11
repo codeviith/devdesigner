@@ -16,11 +16,11 @@ export function ContactSection() {
   const contactMethods = [
     {
       type: "Email",
-      value: "placeholder@gmail.com",
+      value: "kclin128@gmail.com",
       icon: Mail,
       primary: true,
       description: "Best way to reach me directly",
-      action: "mailto:placeholder@gmail.com",
+      action: "mailto:kclin128@gmail.com",
     },
     {
       type: "LinkedIn",

@@ -8,6 +8,36 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 
 export function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [lightbox, setLightbox] = useState<{ projectId: number; index: number } | null>(null);
+  const closeLightbox = () => setLightbox(null);
+  const goToPrevImage = () => {
+    if (!lightbox) return;
+    const project = projects.find((p) => p.id === lightbox.projectId);
+    if (!project || !project.images || project.images.length === 0) return;
+
+    setLightbox((prev) =>
+      prev
+        ? {
+          projectId: prev.projectId,
+          index: (prev.index - 1 + project.images.length) % project.images.length,
+        }
+        : null,
+    );
+  };
+  const goToNextImage = () => {
+    if (!lightbox) return;
+    const project = projects.find((p) => p.id === lightbox.projectId);
+    if (!project || !project.images || project.images.length === 0) return;
+
+    setLightbox((prev) =>
+      prev
+        ? {
+          projectId: prev.projectId,
+          index: (prev.index + 1) % project.images.length,
+        }
+        : null,
+    );
+  };
 
   const projects = [
     {
@@ -18,13 +48,14 @@ export function ProjectsSection() {
       role: "CAD Designer | Product Developer",
       tools: "Fusion 360 | Onshape | SLA & FDM 3D Printing | Post-Processing | Parametric Modeling",
       projectType: "Commercial Product Prototyping | Small-Batch Production",
-      years: "2021–Present",
+      years: "2021 – 2025",
       overview:
-        `The Display System for Model Kits is a modular, hangar-bay–inspired presentation platform engineered to showcase collectible mecha kits. Developed as a commercial product, it required balancing structural strength, precise fit, visual fidelity, and manufacturability for small-batch SLA production.
+        `The Display System for Model Kits is a modular, hangar-bay–inspired presentation platform engineered to showcase collectible mecha kits. Developed as a commercial product, it required balancing structural strength, precise fit, visual fidelity, and manufacturability for small-batch SLA production. Although the system was designed primarily around 1/144-scale mecha kits, its modular architecture allows it to accommodate a range of kit sizes and dynamic poses.
 
         This project covered full-cycle product development, including parametric CAD modeling, component design, iterative prototype testing, and production refinement. I designed modular SLA-printable parts optimized for stability and repeatability, ensuring both display-ready quality and collector-grade durability. Finalized designs were prepared for consistent, small-batch production and customer deployment.`,
       goals: [
         "Create a modular display system that accommodates a variety of mecha kit scales and poses while maintaining structural stability.",
+        "Support common model-kit scales—with primary optimization for 1/144 scale—while maintaining structural stability and compatibility with multiple display configurations.",
         "Balance visual fidelity and mechanical strength to ensure the display feels premium while safely supporting collector-grade kits.",
         "Optimize geometry, tolerances, and part orientation for efficient small-batch SLA production and repeatable fit.",
         "Enable user customization through interchangeable components without compromising assembly simplicity or durability.",
@@ -43,20 +74,23 @@ export function ProjectsSection() {
         "Delivered a modular display system with strong structural reliability, precise component fit, and cohesive visual presentation—supporting collector-scale mecha kits across multiple configurations while reducing print time and post-processing effort through optimized SLA-ready geometry.",
       ],
       images:
-        ["images/display-system-1.jpg", "images/display-system-2.jpg"],
-      notes: "Limited visuals shown due to intellectual property (IP) considerations.",
+        [
+          "ProdPics/DYPLAB-ex-v.png",
+          "ProdPics/DYPLAB-1.png"
+        ],
+      notes: "Limited visuals shown due to intellectual property (IP) restrictions.",
     },
     {
       id: 2,
       title: "Electric Utility Transport Vehicle (EUTV)",
       subtitle: "Functional Prototype",
-      tools: "Fusion 360 | Metal Fabrication | Welding | FDM 3D Printing | Electrical Wiring | Mechanical Design",
+      tools: "Onshape | Metal Fabrication | Welding | FDM 3D Printing | Electrical Wiring | Mechanical Design",
       projectType: "Personal Product Development & Mechanical Prototyping",
-      years: "2023–Present",
+      years: "2023 – 2024",
       overview:
         `The Electric Utility Transport Vehicle (EUTV) is a custom-built mobility prototype created to safely transport full-size trash and recycling bins up and down a steep residential incline. Designed and fabricated from the ground up, it spans the full product development cycle—from CAD modeling and structural design to welding, electronics integration, and functional testing. The system was engineered around key performance needs, including uphill torque, load stability, durable frame construction, and intuitive operator control.
 
-        Using Fusion 360, I developed custom components, optimized drivetrain gearing for incline performance, and designed a reinforced welded chassis to support heavy loads. Electrical subsystems—including lighting, switching, and ESC-controlled power delivery—were integrated for reliability and safety. A quick-attach bin mechanism provides secure, ergonomic loading. The final prototype demonstrates applied mechanical design, iterative development, and practical problem-solving within real-world constraints.`,
+        Using Onshape, I designed and printed custom components, optimized drivetrain gearing for incline performance, and designed a reinforced welded chassis to support heavy loads. Electrical subsystems—including lighting, switching, and ESC-controlled power delivery—were integrated for reliability and safety. A quick-attach bin mechanism provides secure, ergonomic loading. The final prototype demonstrates applied mechanical design, iterative development, and practical problem-solving within real-world constraints.`,
       designGoals: [
         "Enable safe, controllable transport of full trash and recycling bins on a steep incline with minimal operator effort.",
         "Design a robust chassis and suspension system capable of handling outdoor use, uneven terrain, and repeated loaded trips.",
@@ -66,7 +100,7 @@ export function ProjectsSection() {
       ],
       contributions: [
         "Designed and fabricated a reinforced steel chassis using welded tubing, achieving the stability and load-bearing strength required for uphill transport of heavy bins.",
-        "Modeled and optimized drivetrain gear ratios in Fusion 360 to balance torque, speed, and motor efficiency for steep-grade performance.",
+        "Modeled and optimized drivetrain gear ratios in Onshape to balance torque, speed, and motor efficiency for steep-grade performance.",
         "Developed a vibration-dampening suspension linkage, improving traction, ride comfort, and component longevity during uneven-terrain use.",
         "Configured the vehicle's electrical system, including ESC tuning, battery distribution, and safe wiring routing for reliable operation under variable loads.",
         "Integrated LED headlights, taillights, and turn signals to enhance visibility and establish functional safety features consistent with small-form mobility vehicles.",
@@ -79,7 +113,16 @@ export function ProjectsSection() {
       outcomes: [
         "Enabled safe, controlled uphill and downhill transport of heavy residential bins through optimized torque delivery, improved vehicle stability, and ergonomic operator-focused design.",
       ],
-      images: ["images/eutv-1.jpg", "images/eutv-2.jpg"],
+      images: [
+        "ProdPics/EUTV-1.png",
+        "ProdPics/EUTV-2.jpg",
+        "ProdPics/EUTV-3.png",
+        "ProdPics/EUTV-4.png",
+        "ProdPics/EUTV-5.png",
+        "ProdPics/EUTV-6.png",
+        "ProdPics/EUTV-7.png",
+        "ProdPics/EUTV-8.png"
+      ],
     },
     {
       id: 3,
@@ -87,7 +130,7 @@ export function ProjectsSection() {
       subtitle: "Custom Engineered Build",
       tools: "Fusion 360 | Onshape | FDM 3D Printing | Parametric Modeling | Mechanical Design | Electronics Integration",
       projectType: "Personal Product Development & Prototyping",
-      years: "2016 – 2022",
+      years: "2016 – Present",
       overview:
         `The DIY Electric Skateboard is a custom-engineered personal electric vehicle built from the ground up for stable, reliable, high-performance riding. Using a parametric CAD workflow, I developed drivetrain mounts, structural brackets, enclosures, and vibration-resistant components that integrate precisely with dual brushless motors, a lithium-ion battery system, and ESC-based power delivery. Through iterative prototyping and real-world testing, I refined deck geometry, motor positioning, shock absorption, and electronic layout to resolve vibration issues, improve ride comfort, and enhance control responsiveness. The final build demonstrates end-to-end product development—combining CAD modeling, mechanical design, materials optimization, and electronics integration—to deliver a durable, user-safe electric skateboard capable of consistent performance across varied outdoor terrain.`,
       goals: [
@@ -103,14 +146,17 @@ export function ProjectsSection() {
         "Fabricated high-tolerance 3D-printed components to balance lightweight construction with structural durability and vibration resistance.",
         "Integrated and configured electronic systems including dual brushless motors, ESCs, and a lithium-ion battery pack for synchronized acceleration and braking.",
         "Implemented field testing and iterative tuning, improving control responsiveness, shock absorption, and rider comfort through repeated calibration cycles.",
-        "Optimized material selection (PLA+, PETG, and aluminum brackets) based on durability, printability, and heat dissipation properties for outdoor performance.",
+        "Optimized material selection (PLA+, PETG, Carbon Fiber, TPU, and aluminum) based on durability, printability, and heat dissipation properties for outdoor performance.",
         "Styled the board with functional aesthetics, including cable routing, enclosure shaping, and surface finishing for professional appearance and user safety.",
         "Demonstrated ability to integrate mechanical, electrical, and structural systems into a high-speed, user-operated platform, reinforcing safe and reliable real-world performance.",
       ],
       outcomes: [
         "Delivered a durable, reliable personal electric vehicle by eliminating vibration and stability issues through iterative tuning—resulting in a smoother, safer, and more controlled riding experience across varied terrain.",
       ],
-      images: ["images/electric-skateboard-1.jpg", "images/electric-skateboard-2.jpg"],
+      images: [
+        "images/electric-skateboard-1.jpg",
+        "images/electric-skateboard-2.jpg"
+      ],
     },
     {
       id: 4,
@@ -141,7 +187,10 @@ export function ProjectsSection() {
       outcomes: [
         "Achieved significantly improved print accuracy, surface quality, and mechanical stability through targeted mechanical upgrades—delivering performance that surpasses typical retail 3D printers.",
       ],
-      images: ["images/corexy-upgrade-1.jpg", "images/corexy-upgrade-2.jpg"],
+      images: [
+        "images/corexy-upgrade-1.jpg",
+        "images/corexy-upgrade-2.jpg"
+      ],
     },
     {
       id: 5,
@@ -170,15 +219,21 @@ export function ProjectsSection() {
       outcomes: [
         "Enhanced product functionality, usability, durability, and visual quality through focused mechanical redesigns and refined aesthetic improvements.",
       ],
-      images: ["images/product-redesign-1.jpg", "images/product-redesign-2.jpg"],
+      images: [
+        "images/product-redesign-1.jpg",
+        "images/product-redesign-2.jpg"
+      ],
     },
   ];
+
 
   return (
     <section id="projects" className="py-20 px-6 bg-transparent">
       <div className="max-w-7xl mx-auto overflow-visible">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient mb-4">Featured Projects</h2>
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient mb-4">
+            Featured Projects
+          </h2>
           <div className="w-24 h-1 bg-gradient-secondary mx-auto mt-8 rounded-full" />
         </div>
 
@@ -192,7 +247,10 @@ export function ProjectsSection() {
         >
           <CarouselContent className="-ml-1 sm:-ml-1.5 md:-ml-1.5 overflow-visible">
             {projects.map((project, index) => (
-              <CarouselItem key={project.id} className="pl-1 sm:pl-1.5 md:pl-1.5 basis-full sm:basis-1/2 lg:basis-1/3 p-1 sm:p-1.5 md:p-2">
+              <CarouselItem
+                key={project.id}
+                className="pl-1 sm:pl-1.5 md:pl-1.5 basis-full sm:basis-1/2 lg:basis-1/3 p-1 sm:p-1.5 md:p-2"
+              >
                 <Card
                   onClick={() => setSelectedProject(project.id)}
                   className="card-hover group overflow-hidden border-card-border/50 bg-gradient-surface cursor-pointer transition-all duration-300 hover:scale-[1.02] h-full min-h-[280px] sm:min-h-[320px] md:min-h-[340px]"
@@ -218,7 +276,7 @@ export function ProjectsSection() {
         </Carousel>
       </div>
 
-      {/* Modals */}
+      {/* Project Detail Modals */}
       {projects.map((project) => (
         <Dialog
           key={project.id}
@@ -227,8 +285,12 @@ export function ProjectsSection() {
         >
           <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-surface border-card-border/50 [&>button]:text-destructive [&>button]:hover:text-destructive/80 [&>button>svg]:w-6 [&>button>svg]:h-6">
             <DialogHeader>
-              <DialogTitle className="text-3xl font-display font-bold text-gradient">{project.title}</DialogTitle>
-              <DialogDescription className="text-muted-foreground text-base">{project.subtitle}</DialogDescription>
+              <DialogTitle className="text-3xl font-display font-bold text-gradient">
+                {project.title}
+              </DialogTitle>
+              <DialogDescription className="text-muted-foreground text-base">
+                {project.subtitle}
+              </DialogDescription>
             </DialogHeader>
 
             <div className="space-y-6 mt-6">
@@ -262,9 +324,11 @@ export function ProjectsSection() {
 
               {/* Overview */}
               <div>
-                <h4 className="text-xl font-display font-semibold text-gradient-secondary mb-3">Overview</h4>
+                <h4 className="text-xl font-display font-semibold text-gradient-secondary mb-3">
+                  Overview
+                </h4>
                 {String(project.overview)
-                  .split(/\n\s*\n/) // split on blank line
+                  .split(/\n\s*\n/)
                   .map((para, idx) => (
                     <p key={idx} className="text-muted-foreground leading-relaxed mb-4">
                       {para.trim()}
@@ -304,10 +368,12 @@ export function ProjectsSection() {
                 </ul>
               </div>
 
-              {/* Outcomes (if applicable) */}
+              {/* Outcomes */}
               {project.outcomes && (
                 <div>
-                  <h4 className="text-xl font-display font-semibold text-gradient-secondary mb-3">Outcomes</h4>
+                  <h4 className="text-xl font-display font-semibold text-gradient-secondary mb-3">
+                    Outcomes
+                  </h4>
                   <ul className="space-y-2">
                     {project.outcomes.map((item, idx) => (
                       <li key={idx} className="flex items-start">
@@ -319,24 +385,32 @@ export function ProjectsSection() {
                 </div>
               )}
 
-              {/* Image Gallery Placeholder */}
+              {/* Gallery with click-to-enlarge */}
               {project.images && project.images.length > 0 && (
                 <div>
-                  <h4 className="text-xl font-display font-semibold text-gradient-secondary mb-3">Gallery</h4>
+                  <h4 className="text-xl font-display font-semibold text-gradient-secondary mb-3">
+                    Gallery
+                  </h4>
                   <div className="grid grid-cols-2 gap-4">
                     {project.images.map((img, idx) => (
-                      <div
+                      <button
                         key={idx}
-                        className="aspect-video bg-muted/30 rounded-md flex items-center justify-center border border-border/30"
+                        type="button"
+                        onClick={() => setLightbox({ projectId: project.id, index: idx })}
+                        className="bg-muted/30 rounded-md border border-border/30 flex items-center justify-center overflow-hidden cursor-zoom-in group"
                       >
-                        <span className="text-sm text-muted-foreground font-mono">[{img}]</span>
-                      </div>
+                        <img
+                          src={img}
+                          alt={`${project.title} – image ${idx + 1}`}
+                          className="w-full h-full max-h-[260px] object-contain p-2 group-hover:scale-[1.02] transition-transform duration-200"
+                        />
+                      </button>
                     ))}
                   </div>
                 </div>
               )}
 
-              {/* Note (if applicable) */}
+              {/* Note */}
               {project.notes && (
                 <div className="pt-4 border-t border-border/50">
                   <p className="text-sm text-muted-foreground italic">Note: {project.notes}</p>
@@ -353,10 +427,12 @@ export function ProjectsSection() {
                     color: "hsl(210 40% 98%)",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "linear-gradient(135deg, hsl(220 10% 50%), hsl(0 84% 70%))";
+                    e.currentTarget.style.background =
+                      "linear-gradient(135deg, hsl(220 10% 50%), hsl(0 84% 70%))";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "linear-gradient(135deg, hsl(220 10% 40%), hsl(0 84% 60%))";
+                    e.currentTarget.style.background =
+                      "linear-gradient(135deg, hsl(220 10% 40%), hsl(0 84% 60%))";
                   }}
                 >
                   Close
@@ -366,6 +442,122 @@ export function ProjectsSection() {
           </DialogContent>
         </Dialog>
       ))}
+
+      {/* Full-screen Lightbox */}
+      <Dialog open={!!lightbox} onOpenChange={(open) => !open && closeLightbox()}>
+        <DialogContent
+          className="
+            max-w-5xl w-full max-h-[95vh]
+            bg-background/95 backdrop-blur-md
+            border-border/70 p-4
+            flex flex-col gap-4
+            [&>button]:text-destructive
+            [&>button]:hover:text-destructive/80
+            [&>button>svg]:w-6
+            [&>button>svg]:h-6
+          "
+        >
+          {lightbox && (() => {
+            const project = projects.find((p) => p.id === lightbox.projectId);
+            if (!project || !project.images || project.images.length === 0) return null;
+
+            const imgSrc = project.images[lightbox.index];
+            const caption = `${project.title} — View ${lightbox.index + 1} of ${project.images.length}`;
+
+            return (
+              <>
+                <DialogHeader className="pb-2">
+                  <DialogTitle className="text-xl font-display text-gradient">
+                    {project.title}
+                  </DialogTitle>
+                  <DialogDescription className="text-muted-foreground text-sm">
+                    Full-screen view
+                  </DialogDescription>
+                </DialogHeader>
+
+                {/* Image container */}
+                <div
+                  className="
+                    relative flex-1 flex items-center justify-center
+                    bg-black/90 rounded-lg
+                    border border-border/60
+                    overflow-hidden
+                    p-2 md:p-4
+                  "
+                >
+                  {/* Prev arrow */}
+                  {project.images.length > 1 && (
+                    <button
+                      type="button"
+                      onClick={goToPrevImage}
+                      className="
+                        absolute left-3 md:left-6 top-1/2 -translate-y-1/2
+                        p-2 md:p-3 rounded-full
+                        bg-background/70 border border-border/60
+                        hover:bg-background/90
+                        transition-colors z-10
+                      "
+                    >
+                      <ChevronLeft className="w-5 h-5 text-foreground" />
+                    </button>
+                  )}
+
+                  {/* Image (fully contained) */}
+                  <img
+                    src={imgSrc}
+                    alt={caption}
+                    className="max-w-full max-h-[70vh] md:max-h-[80vh] object-contain"
+                  />
+
+                  {/* Next arrow */}
+                  {project.images.length > 1 && (
+                    <button
+                      type="button"
+                      onClick={goToNextImage}
+                      className="
+                        absolute right-3 md:right-6 top-1/2 -translate-y-1/2
+                        p-2 md:p-3 rounded-full
+                        bg-background/70 border border-border/60
+                        hover:bg-background/90
+                        transition-colors z-10
+                      "
+                    >
+                      <ChevronRight className="w-5 h-5 text-foreground" />
+                    </button>
+                  )}
+                </div>
+
+                {/* Caption */}
+                <p className="text-center text-xs md:text-sm text-muted-foreground">
+                  {caption}
+                </p>
+
+                {/* Red gradient Close button (matches project modal) */}
+                <div className="pt-2 border-t border-border/50">
+                  <Button
+                    onClick={closeLightbox}
+                    className="w-full border-0 transition-all duration-300"
+                    style={{
+                      background: "linear-gradient(135deg, hsl(220 10% 40%), hsl(0 84% 60%))",
+                      color: "hsl(210 40% 98%)",
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background =
+                        "linear-gradient(135deg, hsl(220 10% 50%), hsl(0 84% 70%))";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background =
+                        "linear-gradient(135deg, hsl(220 10% 40%), hsl(0 84% 60%))";
+                    }}
+                  >
+                    Close
+                  </Button>
+                </div>
+              </>
+            );
+          })()}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

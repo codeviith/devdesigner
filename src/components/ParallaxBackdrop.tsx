@@ -22,7 +22,7 @@ export function ParallaxBackdrop() {
     >
       {/* Image 1 */}
       <img
-        src="Prod Pics/Riser + Headlight Fixture Exploded View.png"
+        src="ProdPics/Riser-headlight-fixture-ex-v.png"
         alt=""
         className="
           absolute
@@ -40,7 +40,7 @@ export function ParallaxBackdrop() {
 
       {/* Image 2 */}
       <img
-        src="Prod Pics/E-Board (Parallax).png"
+        src="ProdPics/E-board-1.png"
         alt=""
         className="
           absolute
@@ -58,7 +58,7 @@ export function ParallaxBackdrop() {
 
       {/* Image 3 */}
       <img
-        src="Prod Pics/DYPLB (Parallax3).png"
+        src="ProdPics/DYPLAB-ex-v.png"
         alt=""
         className="
           absolute
@@ -76,7 +76,7 @@ export function ParallaxBackdrop() {
 
       {/* Image 4 */}
       <img
-        src="Prod Pics/CoreXY (Parallax).png"
+        src="ProdPics/CoreXY-1.png"
         alt=""
         className="
           absolute
@@ -94,7 +94,7 @@ export function ParallaxBackdrop() {
 
       {/* Image 5 */}
       <img 
-        src="Prod Pics/EUTV (Parallax5).png" 
+        src="ProdPics/EUTV-para.png" 
         alt=""
         className="
           absolute
