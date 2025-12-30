@@ -22,7 +22,7 @@ export function ParallaxBackdrop() {
     >
       {/* Image 1 */}
       <img
-        src="ProdPics/Riser-headlight-fixture-ex-v.png"
+        src="ProdPics/DYPLAB-ex-v-para.png"
         alt=""
         className="
           absolute
@@ -58,7 +58,7 @@ export function ParallaxBackdrop() {
 
       {/* Image 3 */}
       <img
-        src="ProdPics/DYPLAB-ex-v.png"
+        src="ProdPics/CoreXY-1.png"
         alt=""
         className="
           absolute
@@ -76,7 +76,7 @@ export function ParallaxBackdrop() {
 
       {/* Image 4 */}
       <img
-        src="ProdPics/CoreXY-1.png"
+        src="ProdPics/Riser-headlight-fixture-ex-v.png"
         alt=""
         className="
           absolute

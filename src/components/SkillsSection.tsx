@@ -175,7 +175,7 @@ export function SkillsSection() {
           description: 'Interactive simulations, tools, and game prototyping'
         },
         {
-          name: 'HTML/CSS',
+          name: 'HTML | CSS',
           description: 'Responsive layout, styling, and component-driven UI'
         },
         {

@@ -124,12 +124,17 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
           {/* Personal Quote */}
           <div className="relative max-w-3xl mx-auto mt-8 px-4">
             <div className="flex flex-col items-start justify-center">
-              <span className="text-[clamp(3rem,6vw,4.5rem)] font-['Times_New_Roman'] text-primary leading-none -mt-3">
+              <span className="text-[clamp(3rem,6vw,4.5rem)] font-['Times_New_Roman'] text-red-500 leading-none -mt-3">
                 "
               </span>
-              <p className="text-[clamp(1.25rem,2.5vw,1.875rem)] font-['Times_New_Roman'] font-black italic text-white/95 text-left leading-relaxed pl-4 md:pl-8 -mt-2">
+              {/* gray to red */}
+              <p className="text-[clamp(1.25rem,2.5vw,1.875rem)] font-['Times_New_Roman'] font-black italic bg-gradient-to-r from-zinc-400 to-red-500 bg-clip-text text-transparent text-left leading-relaxed pl-4 md:pl-8 -mt-2">
                 A product is only as strong as the design behind it.
               </p>
+              {/* red to gray */}
+              {/* <p className="text-[clamp(1.25rem,2.5vw,1.875rem)] font-['Times_New_Roman'] font-black italic bg-gradient-to-r from-red-500 to-zinc-400 bg-clip-text text-transparent text-left leading-relaxed pl-4 md:pl-8 -mt-2">
+                A product is only as strong as the design behind it.
+              </p> */}
             </div>
           </div>
 

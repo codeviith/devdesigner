@@ -21,7 +21,7 @@ export function AboutSection() {
         <div className="space-y-8">
           <div className="space-y-6">
             <p className="text-muted-foreground leading-relaxed text-justify" style={{ fontSize: "var(--text-base)" }}>
-              I'm a versatile CAD Designer with a strong foundation in 3D modeling, mechanical design, and product
+              I'm a versatile CAD Designer with a strong foundation in mechanical design, 3D modeling, and product
               development. I specialize in creating precise, production-ready models using Fusion 360, OnShape, and
               SolidWorks—tools I use daily to design mechanical parts, assemblies, and functional prototypes. My CAD
               work emphasizes manufacturability, with experience preparing models for 3D printing (FDM/SLA), CNC
@@ -30,13 +30,48 @@ export function AboutSection() {
               real-world applications.
             </p>
 
-            <div className="border-l-4 border-primary py-4" style={{ paddingLeft: "var(--space-md)" }}>
+            <div
+              className="border-l-4 py-4"
+              style={{
+                paddingLeft: "var(--space-md)",
+                borderColor: "hsl(var(--destructive))",
+              }}
+            >
+              {/* dark gray to red */}
               <blockquote
-                className="font-display font-bold text-gradient italic"
+                className="
+                  font-display 
+                  font-bold 
+                  italic
+                  bg-gradient-to-r 
+                  from-neutral-400 
+                  via-red-500 
+                  to-red-500
+                  bg-clip-text 
+                  text-transparent
+                "
                 style={{ fontSize: "var(--text-2xl)" }}
               >
                 "My work turns ideas into products that perform, endure, and evolve."
               </blockquote>
+              {/* red to dark gray */}
+              {/* <blockquote
+                className="
+                  font-display 
+                  font-bold 
+                  italic
+                  bg-gradient-to-r
+                  from-red-500 from-10%
+                  via-red-500 via-35%
+                  to-neutral-400 to-90%
+                  bg-clip-text 
+                  text-transparent
+                "
+                style={{ fontSize: "var(--text-2xl)" }}
+              >
+                "My work turns ideas into products that perform, endure, and evolve."
+              </blockquote> */}
+
             </div>
 
             <p className="text-muted-foreground leading-relaxed text-justify" style={{ fontSize: "var(--text-base)" }}>

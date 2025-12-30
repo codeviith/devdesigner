@@ -75,7 +75,7 @@ export function ProjectsSection() {
       ],
       images:
         [
-          "ProdPics/DYPLAB-ex-v.png",
+          "ProdPics/DYPLAB-ex-v.jpg",
           "ProdPics/DYPLAB-1.png"
         ],
       notes: "Limited visuals shown due to intellectual property (IP) restrictions.",
@@ -448,13 +448,11 @@ export function ProjectsSection() {
         <DialogContent
           className="
             max-w-5xl w-full max-h-[95vh]
-            bg-background/95 backdrop-blur-md
-            border-border/70 p-4
-            flex flex-col gap-4
+            bg-background/95 backdrop-blur-md border-border/70
+            p-4 flex flex-col gap-4
             [&>button]:text-destructive
             [&>button]:hover:text-destructive/80
-            [&>button>svg]:w-6
-            [&>button>svg]:h-6
+            [&>button>svg]:w-6 [&>button>svg]:h-6
           "
         >
           {lightbox && (() => {
@@ -475,16 +473,8 @@ export function ProjectsSection() {
                   </DialogDescription>
                 </DialogHeader>
 
-                {/* Image container */}
-                <div
-                  className="
-                    relative flex-1 flex items-center justify-center
-                    bg-black/90 rounded-lg
-                    border border-border/60
-                    overflow-hidden
-                    p-2 md:p-4
-                  "
-                >
+                {/* Image wrapper – no cropping, image always fits */}
+                <div className="relative flex-1 flex items-center justify-center bg-black/80 rounded-lg">
                   {/* Prev arrow */}
                   {project.images.length > 1 && (
                     <button
@@ -494,19 +484,18 @@ export function ProjectsSection() {
                         absolute left-3 md:left-6 top-1/2 -translate-y-1/2
                         p-2 md:p-3 rounded-full
                         bg-background/70 border border-border/60
-                        hover:bg-background/90
-                        transition-colors z-10
+                        hover:bg-background/90 transition-colors z-10
                       "
                     >
                       <ChevronLeft className="w-5 h-5 text-foreground" />
                     </button>
                   )}
 
-                  {/* Image (fully contained) */}
+                  {/* Image – fully contained in the available area */}
                   <img
                     src={imgSrc}
                     alt={caption}
-                    className="max-w-full max-h-[70vh] md:max-h-[80vh] object-contain"
+                    className="max-w-full max-h-[70vh] object-contain"
                   />
 
                   {/* Next arrow */}
@@ -518,8 +507,7 @@ export function ProjectsSection() {
                         absolute right-3 md:right-6 top-1/2 -translate-y-1/2
                         p-2 md:p-3 rounded-full
                         bg-background/70 border border-border/60
-                        hover:bg-background/90
-                        transition-colors z-10
+                        hover:bg-background/90 transition-colors z-10
                       "
                     >
                       <ChevronRight className="w-5 h-5 text-foreground" />
@@ -532,7 +520,7 @@ export function ProjectsSection() {
                   {caption}
                 </p>
 
-                {/* Red gradient Close button (matches project modal) */}
+                {/* Bottom Close Button – red gradient like project modal */}
                 <div className="pt-2 border-t border-border/50">
                   <Button
                     onClick={closeLightbox}

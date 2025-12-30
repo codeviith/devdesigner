@@ -175,10 +175,10 @@ export function EducationSection() {
                     </div>
                     <Badge
                       variant="outline"
-                      className={`text-sm font-bold flex-shrink-0 border-2 px-3 py-1 ${cert.level.includes('Professional') || cert.level.includes('Black Belt')
-                          ? 'border-primary text-primary'
-                          : cert.level.includes('Green Belt')
-                            ? 'border-secondary text-secondary'
+                      className={`text-sm font-bold flex-shrink-0 border-2 px-3 py-1 ${cert.level === 'Certificate'
+                          ? 'border-green-400 text-green-400'
+                          : cert.level === 'Training'
+                            ? 'border-amber-400 text-amber-400'
                             : 'border-accent text-accent'
                         }`}
                     >
