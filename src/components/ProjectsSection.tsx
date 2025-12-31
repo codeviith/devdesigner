@@ -73,11 +73,13 @@ export function ProjectsSection() {
       outcomes: [
         "Delivered a modular display system with strong structural reliability, precise component fit, and cohesive visual presentation—supporting collector-scale mecha kits across multiple configurations while reducing print time and post-processing effort through optimized SLA-ready geometry.",
       ],
-      images:
-        [
-          "ProdPics/DYPLAB-ex-v.jpg",
-          "ProdPics/DYPLAB-1.png"
-        ],
+      images: [
+        { src: "ProdPics/DYPLAB-ex-v.jpg", caption: "Exploded view — modular frame + paneling layout." },
+        { src: "ProdPics/DYPLAB-1.png", caption: "Final assembled display system — hangar-bay aesthetic." },
+        { src: "ProdPics/Manufacture-1.png", caption: "SLA production layout — orientation/support strategy." },
+        { src: "ProdPics/Manufacture-2.png", caption: "Post-processing stage — sanding/fit check before assembly." },
+        { src: "ProdPics/Manufacture-3.png", caption: "Small-batch output — ready for packing and deployment." },
+      ],
       notes: "Limited visuals shown due to intellectual property (IP) restrictions.",
     },
     {
@@ -114,14 +116,14 @@ export function ProjectsSection() {
         "Enabled safe, controlled uphill and downhill transport of heavy residential bins through optimized torque delivery, improved vehicle stability, and ergonomic operator-focused design.",
       ],
       images: [
-        "ProdPics/EUTV-1.png",
-        "ProdPics/EUTV-2.jpg",
-        "ProdPics/EUTV-3.png",
-        "ProdPics/EUTV-4.png",
-        "ProdPics/EUTV-5.png",
-        "ProdPics/EUTV-6.png",
-        "ProdPics/EUTV-7.png",
-        "ProdPics/EUTV-8.png"
+        { src: "ProdPics/EUTV-1.png", caption: "Placeholder caption." },
+        { src: "ProdPics/EUTV-2.jpg", caption: "Placeholder caption." },
+        { src: "ProdPics/EUTV-3.png", caption: "Placeholder caption." },
+        { src: "ProdPics/EUTV-4.png", caption: "Placeholder caption." },
+        { src: "ProdPics/EUTV-5.png", caption: "Placeholder caption." },
+        { src: "ProdPics/EUTV-6.png", caption: "Placeholder caption." },
+        { src: "ProdPics/EUTV-7.png", caption: "Placeholder caption." },
+        { src: "ProdPics/EUTV-8.png", caption: "Placeholder caption." },
       ],
     },
     {
@@ -154,8 +156,8 @@ export function ProjectsSection() {
         "Delivered a durable, reliable personal electric vehicle by eliminating vibration and stability issues through iterative tuning—resulting in a smoother, safer, and more controlled riding experience across varied terrain.",
       ],
       images: [
-        "images/electric-skateboard-1.jpg",
-        "images/electric-skateboard-2.jpg"
+        { src: "images/electric-skateboard-1.jpg", caption: "Placeholder caption." },
+        { src: "images/electric-skateboard-2.jpg", caption: "Placeholder caption." },
       ],
     },
     {
@@ -188,8 +190,8 @@ export function ProjectsSection() {
         "Achieved significantly improved print accuracy, surface quality, and mechanical stability through targeted mechanical upgrades—delivering performance that surpasses typical retail 3D printers.",
       ],
       images: [
-        "images/corexy-upgrade-1.jpg",
-        "images/corexy-upgrade-2.jpg"
+        { src: "images/corexy-upgrade-1.jpg", caption: "Placeholder caption." },
+        { src: "images/corexy-upgrade-2.jpg", caption: "Placeholder caption." },
       ],
     },
     {
@@ -220,8 +222,8 @@ export function ProjectsSection() {
         "Enhanced product functionality, usability, durability, and visual quality through focused mechanical redesigns and refined aesthetic improvements.",
       ],
       images: [
-        "images/product-redesign-1.jpg",
-        "images/product-redesign-2.jpg"
+        { src: "images/product-redesign-1.jpg", caption: "Placeholder caption." },
+        { src: "images/product-redesign-2.jpg", caption: "Placeholder caption." },
       ],
     },
   ];
@@ -392,7 +394,7 @@ export function ProjectsSection() {
                     Gallery
                   </h4>
                   <div className="grid grid-cols-2 gap-4">
-                    {project.images.map((img, idx) => (
+                    {project.images.map((imgObj, idx) => (
                       <button
                         key={idx}
                         type="button"
@@ -400,7 +402,7 @@ export function ProjectsSection() {
                         className="bg-muted/30 rounded-md border border-border/30 flex items-center justify-center overflow-hidden cursor-zoom-in group"
                       >
                         <img
-                          src={img}
+                          src={imgObj.src}
                           alt={`${project.title} – image ${idx + 1}`}
                           className="w-full h-full max-h-[260px] object-contain p-2 group-hover:scale-[1.02] transition-transform duration-200"
                         />
@@ -459,8 +461,11 @@ export function ProjectsSection() {
             const project = projects.find((p) => p.id === lightbox.projectId);
             if (!project || !project.images || project.images.length === 0) return null;
 
-            const imgSrc = project.images[lightbox.index];
-            const caption = `${project.title} — View ${lightbox.index + 1} of ${project.images.length}`;
+            const current = project.images[lightbox.index];
+            const imgSrc = current.src;
+
+            const caption = current.caption;
+            const meta = `${project.title} — View ${lightbox.index + 1} of ${project.images.length}`;
 
             return (
               <>

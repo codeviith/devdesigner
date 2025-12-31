@@ -128,7 +128,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
                 "
               </span>
               {/* gray to red */}
-              <p className="text-[clamp(1.25rem,2.5vw,1.875rem)] font-['Times_New_Roman'] font-black italic bg-gradient-to-r from-zinc-400 to-red-500 bg-clip-text text-transparent text-left leading-relaxed pl-4 md:pl-8 -mt-2">
+              <p className="text-[clamp(1.25rem,2.5vw,1.875rem)] font-['Times_New_Roman'] font-black italic bg-gradient-to-r from-zinc-400 via-red-500 to-red-500 bg-clip-text text-transparent text-left leading-relaxed pl-4 md:pl-8 -mt-2">
                 A product is only as strong as the design behind it.
               </p>
               {/* red to gray */}
