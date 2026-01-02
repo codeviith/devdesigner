@@ -40,7 +40,7 @@ export function ParallaxBackdrop() {
 
       {/* Image 2 */}
       <img
-        src="ProdPics/E-board-1.png"
+        src="ProdPics/Esk8-1-clr.png"
         alt=""
         className="
           absolute
