@@ -74,8 +74,8 @@ export function ProjectsSection() {
         "Delivered a modular display system with strong structural reliability, precise component fit, and cohesive visual presentation—supporting collector-scale mecha kits across multiple configurations while reducing print time and post-processing effort through optimized SLA-ready geometry.",
       ],
       images: [
+        { src: "ProdPics/DYPLAB-1.png", caption: "Fully assembled product — modular, hangar-bay–inspired display system" },
         { src: "ProdPics/DYPLAB-ex-v.jpg", caption: "Exploded view — modular frame, panel interfaces, and structural breakdown" },
-        { src: "ProdPics/DYPLAB-1.png", caption: "Final assembled display system — modular hangar-bay-inspired presentation" },
         { src: "ProdPics/Manufacture-1.png", caption: "SLA production setup — optimal print orientation for maximum and repeatable output" },
         { src: "ProdPics/Manufacture-2.png", caption: "Post-processing workflow — curing, sanding, and fit verification prior to assembly" },
         { src: "ProdPics/Manufacture-3.png", caption: "Small-batch production — finished components ready for packaging and deployment" }
@@ -167,14 +167,14 @@ export function ProjectsSection() {
         "Enabled safe, controlled uphill and downhill transport of heavy residential bins through optimized torque delivery, improved vehicle stability, and ergonomic operator-focused design.",
       ],
       images: [
-        { src: "ProdPics/EUTV-1.png", caption: "Placeholder caption." },
-        { src: "ProdPics/EUTV-2.jpg", caption: "Placeholder caption." },
-        { src: "ProdPics/EUTV-3.png", caption: "Placeholder caption." },
-        { src: "ProdPics/EUTV-4.png", caption: "Placeholder caption." },
-        { src: "ProdPics/EUTV-5.png", caption: "Placeholder caption." },
-        { src: "ProdPics/EUTV-6.png", caption: "Placeholder caption." },
-        { src: "ProdPics/EUTV-7.png", caption: "Placeholder caption." },
-        { src: "ProdPics/EUTV-8.png", caption: "Placeholder caption." },
+        { src: "ProdPics/EUTV-1.png", caption: "Functional prototype — side view of vehicle architecture showing seating module, steering assembly, pedal controls, rear motor system, and integrated utility hitch" },
+        { src: "ProdPics/EUTV-2.jpg", caption: "Operational lighting system — headlight, taillight, and underbody LED configuration validating visibility and safe night-time operation" },
+        { src: "ProdPics/EUTV-3.png", caption: "Electrical system integration — motor controller, power electronics, and organized wiring system allowing for a safe and reliable vehicle operation" },
+        { src: "ProdPics/EUTV-4.png", caption: "Rear drivetrain assembly — geared motor drive and 3D-printed chain guard designed to protect moving components from debris during load operation" },
+        { src: "ProdPics/EUTV-5.png", caption: "Front steering mechanism — tie-rod linkage and compression spring system designed to improve control, ride comfort, and vibration absorption" },
+        { src: "ProdPics/EUTV-6.png", caption: "Utility hitch integration — modified hauler hitch attachment designed to haul and transport trash bins up steep incline" },
+        { src: "ProdPics/EUTV-7.png", caption: "Flatbed trailer configuration — modular trailer system enabling transport of tools, equipment, and general cargo" },
+        { src: "ProdPics/EUTV-8.png", caption: "Passenger trailer configuration — single-seated attachment demonstrating safe two-person transport capability" },
       ],
     },
     {
