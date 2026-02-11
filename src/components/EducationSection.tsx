@@ -56,7 +56,7 @@ export function EducationSection() {
       level: 'Certificate'
     },
     {
-      name: 'Additive Manufacturing & 3D Printing– FDM/SLA Printing & Material Selection',
+      name: 'Additive Manufacturing & 3D Printing – FDM/SLA Printing & Material Selection',
       issuer: '',
       date: '2016—Present',
       credentialId: 'Hands-on experience in end-to-end prototyping and small-batch manufacturing workflows.',

@@ -115,7 +115,7 @@ This portfolio complements my resume by providing visual and technical documenta
 You can reach me through the website contact form or directly via:
 
 - **Email**: &#107;&#99;&#108;&#105;&#110;&#49;&#50;&#56;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;
-- **LinkedIn**: [Kevin Lin](https://www.linkedin.com/in/kevinlin128/)
+- **LinkedIn**: [Kevin Lin](https://www.linkedin.com/in/kevinlin128)
 
 
 ## License
