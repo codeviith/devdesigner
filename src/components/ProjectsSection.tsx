@@ -145,7 +145,7 @@ export function ProjectsSection() {
 
         Using Onshape, I designed and printed custom components, optimized drivetrain gearing for incline performance, and designed a reinforced welded chassis to support heavy loads. Electrical subsystems—including lighting, switching, and ESC-controlled power delivery—were integrated for reliability and safety. A quick-attach bin mechanism provides secure, ergonomic loading. The final prototype demonstrates applied mechanical design, iterative development, and practical problem-solving within real-world constraints.`,
       designGoals: [
-        "Enable safe, controllable transport of full trash and recycling bins on a steep incline with minimal operator effort.",
+        "Enable safe, controllable transport of trash and recycling bins on a steep incline with minimal operator effort.",
         "Design a robust chassis and suspension system capable of handling outdoor use, uneven terrain, and repeated loaded trips.",
         "Optimize drivetrain gearing for sufficient uphill torque while maintaining manageable speed and energy efficiency.",
         "Integrate intuitive, ergonomic controls so non-technical users can operate the vehicle confidently and safely.",
@@ -164,17 +164,21 @@ export function ProjectsSection() {
         "Validated performance through incline testing, confirming torque output, stability under load, and reliability during repeated uphill and downhill operation.",
       ],
       outcomes: [
-        "Enabled safe, controlled uphill and downhill transport of heavy residential bins through optimized torque delivery, improved vehicle stability, and ergonomic operator-focused design.",
+        "Provided a safe uphill and downhill transport of heavy residential garbage bins through optimized torque delivery, improved vehicle stability, and ergonomic operator-focused design.",
       ],
       images: [
         { src: "ProdPics/EUTV-1.png", caption: "Functional prototype — side view of vehicle architecture showing seating module, steering assembly, pedal controls, rear motor system, and integrated utility hitch" },
         { src: "ProdPics/EUTV-2.jpg", caption: "Operational lighting system — headlight, taillight, and underbody LED configuration validating visibility and safe night-time operation" },
-        { src: "ProdPics/EUTV-3.png", caption: "Electrical system integration — motor controller, power electronics, and organized wiring system allowing for a safe and reliable vehicle operation" },
-        { src: "ProdPics/EUTV-4.png", caption: "Rear drivetrain assembly — geared motor drive and 3D-printed chain guard designed to protect moving components from debris during load operation" },
-        { src: "ProdPics/EUTV-5.png", caption: "Front steering mechanism — tie-rod linkage and compression spring system designed to improve control, ride comfort, and vibration absorption" },
-        { src: "ProdPics/EUTV-6.png", caption: "Utility hitch integration — modified hauler hitch attachment designed to haul and transport trash bins up steep incline" },
-        { src: "ProdPics/EUTV-7.png", caption: "Flatbed trailer configuration — modular trailer system enabling transport of tools, equipment, and general cargo" },
-        { src: "ProdPics/EUTV-8.png", caption: "Passenger trailer configuration — single-seated attachment demonstrating safe two-person transport capability" },
+        { src: "ProdPics/EUTV-3.png", caption: "Turn signal lighting — left and right LED indicators supporting safe directional signaling during operation" },
+        { src: "ProdPics/EUTV-4.jpg", caption: "Steering control interface — top-down view of steering wheel with integrated toggle switches for headlights, turn signals, and battery monitoring" },
+        { src: "ProdPics/EUTV-5.jpg", caption: "Operator dashboard controls — auxiliary switch panel managing underbody lighting, regenerative braking, performance mode, and parking functions" },
+        { src: "ProdPics/EUTV-6.png", caption: "Driver safety system — seat belt integration with multi-position gear selector supporting forward and reverse transmission control" },
+        { src: "ProdPics/EUTV-7.png", caption: "Electrical system integration — motor controller, power electronics, and organized wiring supporting safe and reliable vehicle operation" },
+        { src: "ProdPics/EUTV-8.png", caption: "Rear drivetrain assembly — geared motor drive with 3D-printed chain guard designed to protect moving components from debris during load operation" },
+        { src: "ProdPics/EUTV-9.png", caption: "Front steering mechanism — tie-rod linkage and compression spring system improving control, ride comfort, and vibration absorption" },
+        { src: "ProdPics/EUTV-10.png", caption: "Utility hitch integration — modified hauler attachment designed to transport trash bins up and down steep inclines" },
+        { src: "ProdPics/EUTV-11.png", caption: "Flatbed trailer configuration — modular trailer system enabling transport of tools, equipment, and general cargo" },
+        { src: "ProdPics/EUTV-12.png", caption: "Passenger trailer configuration — single-seated attachment demonstrating safe two-person transport capability" },
       ],
     },
     {
