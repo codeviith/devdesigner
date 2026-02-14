@@ -170,8 +170,8 @@ export function ProjectsSection() {
         { src: "ProdPics/EUTV-1.png", caption: "Functional prototype — side view of vehicle architecture showing seating module, steering assembly, pedal controls, rear motor system, and integrated utility hitch" },
         { src: "ProdPics/EUTV-2.jpg", caption: "Operational lighting system — headlight, taillight, and underbody LED configuration validating visibility and safe night-time operation" },
         { src: "ProdPics/EUTV-3.png", caption: "Turn signal lighting — left and right LED indicators supporting safe directional signaling during operation" },
-        { src: "ProdPics/EUTV-4.jpg", caption: "Steering control interface — top-down view of steering wheel with integrated toggle switches for headlights, turn signals, and battery monitoring" },
-        { src: "ProdPics/EUTV-5.jpg", caption: "Operator dashboard controls — auxiliary switch panel managing underbody lighting, regenerative braking, performance mode, and parking functions" },
+        { src: "ProdPics/EUTV-4.png", caption: "Steering control interface — top-down view of steering wheel with integrated toggle switches for headlights, turn signals, and battery monitoring" },
+        { src: "ProdPics/EUTV-5.png", caption: "Operator dashboard controls — auxiliary switch panel managing underbody lighting, regenerative braking, performance mode, and parking functions" },
         { src: "ProdPics/EUTV-6.png", caption: "Driver safety system — seat belt integration with multi-position gear selector supporting forward and reverse transmission control" },
         { src: "ProdPics/EUTV-7.png", caption: "Electrical system integration — motor controller, power electronics, and organized wiring supporting safe and reliable vehicle operation" },
         { src: "ProdPics/EUTV-8.png", caption: "Rear drivetrain assembly — geared motor drive with 3D-printed chain guard designed to protect moving components from debris during load operation" },
@@ -272,11 +272,15 @@ export function ProjectsSection() {
   return (
     <section id="projects" className="py-20 px-6 bg-transparent">
       <div className="max-w-7xl mx-auto overflow-visible">
-        <div className="text-center mb-16">
+        <div className="text-center mb-1">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-gradient mb-4">
             Featured Projects
           </h2>
           <div className="w-24 h-1 bg-gradient-secondary mx-auto mt-8 rounded-full" />
+          {/*  Portfolio note */}
+          <p className="mt-12 text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Projects shown here continue to evolve through ongoing iteration and refinement.
+          </p>
         </div>
 
         {/* Project Carousel */}
