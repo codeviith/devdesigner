@@ -75,7 +75,7 @@ export function ProjectsSection() {
       projectType: "Commercial Product Prototyping | Small-Batch Production",
       years: "2021 – 2025",
       overview:
-        `The Display System for Model Kits is a modular, hangar-bay–inspired presentation platform engineered to showcase collectible mecha kits. Developed as a commercial product, it required balancing structural strength, precise fit, visual fidelity, and manufacturability for small-batch SLA production. Although the system was designed primarily around 1/144-scale mecha kits, its modular architecture allows it to accommodate a range of kit sizes and dynamic poses.
+        `The Display System for Model Kits is a modular, hangar-bay–inspired presentation platform designed to showcase collectible mecha kits. Developed as a commercial product, it required balancing structural strength, precise fit, visual fidelity, and manufacturability for small-batch SLA production. Although the system was designed primarily around 1/144-scale mecha kits, its modular architecture allows it to accommodate a range of kit sizes and dynamic poses.
 
         This project covered full-cycle product development, including parametric CAD modeling, component design, iterative prototype testing, and production refinement. I designed modular SLA-printable parts optimized for stability and repeatability, ensuring both display-ready quality and collector-grade durability. Finalized designs were prepared for consistent, small-batch production and customer deployment.`,
       goals: [
@@ -137,6 +137,7 @@ export function ProjectsSection() {
         "Delivered a durable, reliable personal electric vehicle by eliminating vibration and stability issues through iterative tuning—resulting in a smoother, safer, and more controlled riding experience across varied terrain.",
       ],
       images: [
+        // Product
         { src: "ProdPics/Esk8-1.png", caption: "All-weather proof of concept — winter riding capability, water-resistant enclosure, and traction performance" },
         { src: "ProdPics/Esk8-2.png", caption: "Urban terrain usability — mixed road surfaces, surface elevation changes, and metro-city riding conditions" },
         { src: "ProdPics/Esk8-3.png", caption: "Top-down view — deck geometry, stance surface area, wheel clearance, and integrated battery-status indicator" },
@@ -147,6 +148,7 @@ export function ProjectsSection() {
         { src: "ProdPics/Esk8-8.png", caption: "Underside mechanical layout — dual drive motors and mechanical braking system" },
         { src: "ProdPics/Esk8-9.png", caption: "Self-standing design — hands-free stability for brief stops and public-space use" },
         { src: "ProdPics/Esk8-10.png", caption: "Internal electronics integration — structured architecture of ESCs, battery pack, BMS, wiring paths, and enclosure sealing" },
+        // CAD
         { src: "ProdPics/Esk8-CAD-1-Riser+Headlight-Fixture-Exploded View.jpg", caption: "Exploded CAD view — Riser and headlight assembly illustrating fastener placement, component integration, and assembly sequence" },
         { src: "ProdPics/Esk8-CAD-2-Riser+Headlight-Fixture.jpeg", caption: "Assembled CAD model — Front riser with integrated headlight mount used for increased ground clearance, adjustable beam-angle geometry, and easy service access" },
         { src: "ProdPics/Esk8-CAD-3-CREE Dual-LED headlight-holder.jpeg", caption: "Part CAD model — Dual-LED headlight mount with elastic press-fit retention for LED bulbs, parallel wiring, and ESC-controlled remote on/off" },
@@ -192,14 +194,15 @@ export function ProjectsSection() {
         "Provided a safe uphill and downhill transport of heavy residential garbage bins through optimized torque delivery, improved vehicle stability, and ergonomic operator-focused design.",
       ],
       images: [
+        // Product
         { src: "ProdPics/EUTV-1.png", caption: "Functional prototype — side view of vehicle architecture showing seating module, steering assembly, pedal controls, rear motor system, and integrated utility hitch" },
         { src: "ProdPics/EUTV-2.jpg", caption: "Operational lighting system — headlight, taillight, and underbody LED configuration validating visibility and safe night-time operation" },
         { src: "ProdPics/EUTV-3.png", caption: "Turn signal lighting — left and right LED indicators supporting safe directional signaling during operation" },
-        { src: "ProdPics/EUTV-4.png", caption: "caption" },
+        { src: "ProdPics/EUTV-4.png", caption: "Taillight safety system — dynamic brightness response during braking with integrated rear turn signals" },
         { src: "ProdPics/EUTV-5.png", caption: "Steering control interface — top-down view of steering wheel with integrated toggle switches for headlights, turn signals, and battery monitoring" },
         { src: "ProdPics/EUTV-6.png", caption: "Operator dashboard controls — auxiliary switch panel managing underbody lighting, regenerative braking, performance mode, and parking functions" },
         { src: "ProdPics/EUTV-7.png", caption: "Driver safety system — seat belt integration with multi-position gear selector supporting forward and reverse transmission control" },
-        { src: "ProdPics/EUTV-8.png", caption: "caption" },
+        { src: "ProdPics/EUTV-8.png", caption: "Battery protection enclosure — lithium-ion pack secured in a fire-resistant sleeve housed in a vented steel compartment shielding against debris, dust, and moisture while providing layered mitigation against thermal runaway risk" },
         { src: "ProdPics/EUTV-9.png", caption: "Electrical system integration — motor controller, power electronics, and organized wiring supporting safe and reliable vehicle operation" },
         { src: "ProdPics/EUTV-10.png", caption: "Rear drivetrain assembly — geared motor drive with 3D-printed chain guard designed to protect moving components from debris during load operation" },
         { src: "ProdPics/EUTV-11.png", caption: "Front steering mechanism — tie-rod linkage and compression spring system improving control, ride comfort, and vibration absorption" },
@@ -238,6 +241,7 @@ export function ProjectsSection() {
         "Achieved significantly improved print accuracy, surface quality, and mechanical stability through targeted mechanical upgrades—delivering performance that surpasses typical retail 3D printers.",
       ],
       images: [
+        // Product
         { src: "ProdPics/CoreXY-1.png", caption: "Completed CoreXY printer — fully assembled system featuring integrated LED lighting, WiFi-enabled Duet2 control, and built-in noise and vibration dampening" },
         { src: "ProdPics/CoreXY-2.png", caption: "Front system view — high-volume printer geometry, LCD interface, and rigid frame alignment designed to maintain dimensional accuracy and print consistency" },
         { src: "ProdPics/CoreXY-3.png", caption: "Rear electronics layout — organized electrical architecture with structured cable routing for reliability, serviceability, and thermal management" },
@@ -295,9 +299,11 @@ export function ProjectsSection() {
           description:
             "Interactive add-on redesign featuring weight-activated lighting and a compact, modular enclosure.",
           images: [
+            // Product
             { src: "ProdPics/Coaster-1.jpg", caption: "Final assembly — compact enclosure with weight-activated LED response" },
             { src: "ProdPics/Coaster-2.jpg", caption: "Internal layout — switch/LED routing and component packaging" },
             { src: "ProdPics/Coaster-3.jpg", caption: "Prototype validation — fit checks and lighting behavior under load" },
+            // CAD
           ],
         },
         {
@@ -305,9 +311,11 @@ export function ProjectsSection() {
           description:
             "Custom rewinder redesign focused on tension control, spool alignment, and smooth operation.",
           images: [
+            // Product
             { src: "ProdPics/Rewinder-1.jpg", caption: "System overview — rewinder assembly designed for stable spool tracking" },
             { src: "ProdPics/Rewinder-2.jpg", caption: "Drive and tensioning — controlled feeding to reduce tangles and slack" },
             { src: "ProdPics/Rewinder-3.jpg", caption: "Functional test — smooth rewind cycle and repeatable alignment" },
+            // CAD
           ],
         },
         {
@@ -315,9 +323,11 @@ export function ProjectsSection() {
           description:
             "Repurposed enclosure platform enhanced with lighting, filament routing, and modular storage add-ons.",
           images: [
+            // Product
             { src: "ProdPics/Enclosure-1.jpg", caption: "Completed enclosure — rigid frame with upgraded lighting and access" },
             { src: "ProdPics/Enclosure-2.jpg", caption: "Filament handling — top-mounted holders and guided routing" },
             { src: "ProdPics/Enclosure-3.jpg", caption: "Integration details — modular mounts and accessory interfaces" },
+            // CAD
           ],
         },
       ],
