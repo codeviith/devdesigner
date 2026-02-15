@@ -12,31 +12,56 @@ export function ProjectsSection() {
   const closeLightbox = () => setLightbox(null);
   const goToPrevImage = () => {
     if (!lightbox) return;
+
     const project = projects.find((p) => p.id === lightbox.projectId);
-    if (!project || !project.images || project.images.length === 0) return;
+    if (!project) return;
+
+    const images = getProjectImages(project);
+    if (images.length === 0) return;
 
     setLightbox((prev) =>
       prev
         ? {
           projectId: prev.projectId,
-          index: (prev.index - 1 + project.images.length) % project.images.length,
+          index: (prev.index - 1 + images.length) % images.length,
         }
         : null,
     );
   };
+
   const goToNextImage = () => {
     if (!lightbox) return;
+
     const project = projects.find((p) => p.id === lightbox.projectId);
-    if (!project || !project.images || project.images.length === 0) return;
+    if (!project) return;
+
+    const images = getProjectImages(project);
+    if (images.length === 0) return;
 
     setLightbox((prev) =>
       prev
         ? {
           projectId: prev.projectId,
-          index: (prev.index + 1) % project.images.length,
+          index: (prev.index + 1) % images.length,
         }
         : null,
     );
+  };
+
+  type ImageObj = { src: string; caption: string };
+
+  const getProjectImages = (project: any): ImageObj[] => {
+    if (project.galleryGroups?.length) {
+      return project.galleryGroups.flatMap((g: any) => g.images ?? []);
+    }
+    return project.images ?? [];
+  };
+
+  const getFlatIndexFromGroup = (project: any, groupIndex: number, imageIndex: number) => { //puts "grouped index" (groupIndex + imageIndex) into a flat index for the lightbox
+    const groups = project.galleryGroups ?? [];
+    let offset = 0;
+    for (let i = 0; i < groupIndex; i++) offset += (groups[i]?.images?.length ?? 0);
+    return offset + imageIndex;
   };
 
   const projects = [
@@ -90,7 +115,7 @@ export function ProjectsSection() {
       projectType: "Personal Product Development & Prototyping",
       years: "2016 – Present",
       overview:
-        `The DIY Electric Skateboard is a custom-engineered personal electric vehicle built from the ground up for stable, reliable, high-performance riding. Using a parametric CAD workflow, I developed drivetrain mounts, structural brackets, enclosures, and vibration-resistant components that integrate precisely with dual brushless motors, a lithium-ion battery system, and ESC-based power delivery. Through iterative prototyping and real-world testing, I refined deck geometry, motor positioning, shock absorption, and electronic layout to resolve vibration issues, improve ride comfort, and enhance control responsiveness. The final build demonstrates end-to-end product development—combining CAD modeling, mechanical design, materials optimization, and electronics integration—to deliver a durable, user-safe electric skateboard capable of consistent performance across varied outdoor terrain.`,
+        `The DIY Electric Skateboard is a purpose-built personal electric vehicle developed from the ground up for stable, reliable, high-performance riding. Using a parametric CAD workflow, I designed drivetrain mounts, structural brackets, enclosures, and vibration-resistant components that integrate precisely with dual brushless motors, lithium-ion battery system, and ESC-based power delivery. Through iterative prototyping and real-world testing, I refined deck geometry, motor positioning, shock absorption, and electronic layout to resolve vibration issues, improve ride comfort, and enhance control responsiveness. The final build demonstrates end-to-end product development—combining CAD modeling, mechanical design, materials optimization, and electronics integration—to deliver a durable, user-safe electric skateboard capable of consistent performance across varied outdoor terrain.`,
       goals: [
         "Develop a high-speed electric skateboard that feels stable, predictable, and safe for real-world outdoor riding.",
         "Integrate mechanical, electrical, and structural systems into a compact platform with clean packaging and serviceable components.",
@@ -137,14 +162,14 @@ export function ProjectsSection() {
       id: 3,
       title: "Electric Utility Transport Vehicle (EUTV)",
       subtitle: "Functional Prototype",
-      tools: "Onshape | Metal Fabrication | Welding | FDM 3D Printing | Electrical Wiring | Mechanical Design",
+      tools: "Onshape | CNC Machining | Welding | FDM 3D Printing | Hand Fabrication Tools | Electrical Wiring Integration | Mechanical System Design",
       projectType: "Personal Product Development & Mechanical Prototyping",
       years: "2023 – 2024",
       overview:
         `The Electric Utility Transport Vehicle (EUTV) is a custom-built mobility prototype created to safely transport full-size trash and recycling bins up and down a steep residential incline. Designed and fabricated from the ground up, it spans the full product development cycle—from CAD modeling and structural design to welding, electronics integration, and functional testing. The system was engineered around key performance needs, including uphill torque, load stability, durable frame construction, and intuitive operator control.
 
         Using Onshape, I designed and printed custom components, optimized drivetrain gearing for incline performance, and designed a reinforced welded chassis to support heavy loads. Electrical subsystems—including lighting, switching, and ESC-controlled power delivery—were integrated for reliability and safety. A quick-attach bin mechanism provides secure, ergonomic loading. The final prototype demonstrates applied mechanical design, iterative development, and practical problem-solving within real-world constraints.`,
-      designGoals: [
+      goals: [
         "Enable safe, controllable transport of trash and recycling bins on a steep incline with minimal operator effort.",
         "Design a robust chassis and suspension system capable of handling outdoor use, uneven terrain, and repeated loaded trips.",
         "Optimize drivetrain gearing for sufficient uphill torque while maintaining manageable speed and energy efficiency.",
@@ -157,7 +182,7 @@ export function ProjectsSection() {
         "Developed a vibration-dampening suspension linkage, improving traction, ride comfort, and component longevity during uneven-terrain use.",
         "Configured the vehicle's electrical system, including ESC tuning, battery distribution, and safe wiring routing for reliable operation under variable loads.",
         "Integrated LED headlights, taillights, and turn signals to enhance visibility and establish functional safety features consistent with small-form mobility vehicles.",
-        "Engineered a quick-attach bin hook mechanism designed for secure latching, ergonomic handling, and fast engagement/disengagement during transport.",
+        "Constructed a quick-attach bin hook mechanism designed for secure latching, ergonomic handling, and fast engagement/disengagement during transport.",
         "Produced precision CAD models for all custom components, including motor mounts, structural brackets, control housings, and attachment interfaces.",
         "Selected materials and fabricated components for durability and modularity, allowing for maintenance, upgrades, and future design iterations.",
         "Designed the operator interface, refining steering geometry, seating position, and control placement for comfort, stability, and intuitive operation.",
@@ -200,7 +225,7 @@ export function ProjectsSection() {
         "Use the printer as a testbed for experimental mechanisms and calibration methods while keeping it dependable for day-to-day use.",
       ],
       contributions: [
-        "Engineered modular mechanical assemblies including tool changers, printhead mounts, and automated bed-leveling systems to improve precision and ease of maintenance.",
+        "Developed modular mechanical assemblies including tool changers, printhead mounts, and automated bed-leveling systems to improve precision and ease of maintenance.",
         "Designed and fabricated custom structural components to increase frame rigidity, reduce vibration, and stabilize linear motion at higher print speeds.",
         "Integrated mechanical calibration systems to fine-tune belt tension, Z-axis alignment, and printhead positioning, achieving sub-millimeter print accuracy.",
         "Optimized thermal and cooling performance with redesigned fan ducting, extruder paths, and electronics enclosures for consistent temperature control.",
@@ -244,7 +269,7 @@ export function ProjectsSection() {
       projectType: "Applied Mechanical Redesign & Functional System Enhancement",
       years: "2021 – Present",
       overview:
-        `This project series focuses on improving and reinterpreting existing consumer and hobbyist products by addressing real usability issues, structural limitations, and ergonomic constraints. Rather than inventing products from scratch, these builds emphasize applied redesign, system integration, and functional enhancement of existing platforms. Through problem evaluation and iterative prototyping, I developed parametric redesigns in Fusion 360 and Onshape to improve durability, fit precision, performance, and user interaction while preserving core functionality. Across multiple development cycles, these projects expanded into modular add-ons, enclosure systems, interactive mechanisms, and workflow-driven improvements, using desktop fabrication methods and repurposed materials to validate tolerances, assembly flow, and long-term reliability. The work demonstrates practical engineering judgment, constraint-based design thinking, and value-focused enhancements that transform off-the-shelf products into more capable, refined, and purpose-built solutions.`
+        `This project series focuses on improving and reinterpreting existing consumer and hobbyist products by addressing real usability issues, structural limitations, and ergonomic constraints. Rather than inventing products from scratch, these builds emphasize applied redesign, system integration, and functional enhancement of existing platforms. Through problem evaluation and iterative prototyping, I developed parametric redesigns in Fusion 360 and Onshape to improve durability, fit precision, performance, and user interaction while preserving core functionality. Across multiple development cycles, these projects expanded into modular add-ons, enclosure systems, interactive mechanisms, and workflow-driven improvements, using desktop fabrication methods and repurposed materials to validate tolerances, assembly flow, and long-term reliability. The work demonstrates practical technical judgment, constraint-based design thinking, and value-focused enhancements that transform off-the-shelf products into more capable, refined, and purpose-built solutions.`
       ,
       goals: [
         "Identify real-world limitations in existing products and translate them into actionable redesign objectives.",
@@ -264,9 +289,37 @@ export function ProjectsSection() {
       outcomes: [
         "Delivered measurable product improvements in usability, durability, and performance through applied redesign and functional system integration.",
       ],
-      images: [
-        { src: "images/product-redesign-1.jpg", caption: "Placeholder caption." },
-        { src: "images/product-redesign-2.jpg", caption: "Placeholder caption." },
+      galleryGroups: [
+        {
+          title: "RGB Reactive Coaster",
+          description:
+            "Interactive add-on redesign featuring weight-activated lighting and a compact, modular enclosure.",
+          images: [
+            { src: "ProdPics/Coaster-1.jpg", caption: "Final assembly — compact enclosure with weight-activated LED response" },
+            { src: "ProdPics/Coaster-2.jpg", caption: "Internal layout — switch/LED routing and component packaging" },
+            { src: "ProdPics/Coaster-3.jpg", caption: "Prototype validation — fit checks and lighting behavior under load" },
+          ],
+        },
+        {
+          title: "Filament Rewinder System",
+          description:
+            "Custom rewinder redesign focused on tension control, spool alignment, and smooth operation.",
+          images: [
+            { src: "ProdPics/Rewinder-1.jpg", caption: "System overview — rewinder assembly designed for stable spool tracking" },
+            { src: "ProdPics/Rewinder-2.jpg", caption: "Drive and tensioning — controlled feeding to reduce tangles and slack" },
+            { src: "ProdPics/Rewinder-3.jpg", caption: "Functional test — smooth rewind cycle and repeatable alignment" },
+          ],
+        },
+        {
+          title: "Modular Printer Enclosure",
+          description:
+            "Repurposed enclosure platform enhanced with lighting, filament routing, and modular storage add-ons.",
+          images: [
+            { src: "ProdPics/Enclosure-1.jpg", caption: "Completed enclosure — rigid frame with upgraded lighting and access" },
+            { src: "ProdPics/Enclosure-2.jpg", caption: "Filament handling — top-mounted holders and guided routing" },
+            { src: "ProdPics/Enclosure-3.jpg", caption: "Integration details — modular mounts and accessory interfaces" },
+          ],
+        },
       ],
     },
   ];
@@ -358,7 +411,7 @@ export function ProjectsSection() {
                   </div>
                 )}
                 <div>
-                  <span className="font-semibold text-foreground">Tools Used: </span>
+                  <span className="font-semibold text-foreground">Tools & Methods: </span>
                   <span className="text-muted-foreground">{project.tools}</span>
                 </div>
                 <div>
@@ -435,27 +488,72 @@ export function ProjectsSection() {
               )}
 
               {/* Gallery with click-to-enlarge */}
-              {project.images && project.images.length > 0 && (
+              {(getProjectImages(project).length > 0) && (
                 <div>
                   <h4 className="text-xl font-display font-semibold text-gradient-secondary mb-3">
                     Gallery
                   </h4>
-                  <div className="grid grid-cols-2 gap-4">
-                    {project.images.map((imgObj, idx) => (
-                      <button
-                        key={idx}
-                        type="button"
-                        onClick={() => setLightbox({ projectId: project.id, index: idx })}
-                        className="bg-muted/30 rounded-md border border-border/30 flex items-center justify-center overflow-hidden cursor-zoom-in group"
-                      >
-                        <img
-                          src={imgObj.src}
-                          alt={`${project.title} – image ${idx + 1}`}
-                          className="w-full h-full max-h-[260px] object-contain p-2 group-hover:scale-[1.02] transition-transform duration-200"
-                        />
-                      </button>
-                    ))}
-                  </div>
+
+                  {/* Grouped gallery (for your redesign collection) */}
+                  {project.galleryGroups?.length ? (
+                    <div className="space-y-10">
+                      {project.galleryGroups.map((group: any, gIdx: number) => (
+                        <div key={`${project.id}-group-${gIdx}`} className="space-y-4">
+                          <div className="space-y-1">
+                            <h5 className="text-lg md:text-xl font-display font-semibold text-foreground">
+                              {group.title}
+                            </h5>
+                            {group.description && (
+                              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                                {group.description}
+                              </p>
+                            )}
+                          </div>
+
+                          <div className="grid grid-cols-2 gap-4">
+                            {(group.images ?? []).map((imgObj: any, iIdx: number) => {
+                              const flatIndex = getFlatIndexFromGroup(project, gIdx, iIdx);
+                              return (
+                                <button
+                                  key={`${project.id}-${gIdx}-${iIdx}`}
+                                  type="button"
+                                  onClick={() => setLightbox({ projectId: project.id, index: flatIndex })}
+                                  className="bg-muted/30 rounded-md border border-border/30 flex items-center justify-center overflow-hidden cursor-zoom-in group"
+                                >
+                                  <img
+                                    src={imgObj.src}
+                                    alt={`${group.title} – image ${iIdx + 1}`}
+                                    className="w-full h-full max-h-[260px] object-contain p-2 group-hover:scale-[1.02] transition-transform duration-200"
+                                  />
+                                </button>
+                              );
+                            })}
+                          </div>
+
+                          {/* subtle divider between mini-projects */}
+                          <div className="h-px bg-border/40" />
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    /* Standard gallery (everything else) */
+                    <div className="grid grid-cols-2 gap-4">
+                      {project.images.map((imgObj: any, idx: number) => (
+                        <button
+                          key={idx}
+                          type="button"
+                          onClick={() => setLightbox({ projectId: project.id, index: idx })}
+                          className="bg-muted/30 rounded-md border border-border/30 flex items-center justify-center overflow-hidden cursor-zoom-in group"
+                        >
+                          <img
+                            src={imgObj.src}
+                            alt={`${project.title} – image ${idx + 1}`}
+                            className="w-full h-full max-h-[260px] object-contain p-2 group-hover:scale-[1.02] transition-transform duration-200"
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  )}
                 </div>
               )}
 
@@ -506,13 +604,19 @@ export function ProjectsSection() {
         >
           {lightbox && (() => {
             const project = projects.find((p) => p.id === lightbox.projectId);
-            if (!project || !project.images || project.images.length === 0) return null;
+            if (!project) return null;
 
-            const current = project.images[lightbox.index];
+            const images = getProjectImages(project);
+            if (images.length === 0) return null;
+
+            if (lightbox.index < 0 || lightbox.index >= images.length) return null;
+
+
+            const current = images[lightbox.index];
             const imgSrc = current.src;
-
             const caption = current.caption;
-            const meta = `${project.title} — View ${lightbox.index + 1} of ${project.images.length}`;
+            const meta = `${project.title} — View ${lightbox.index + 1} of ${images.length}`;
+
 
             return (
               <>
@@ -528,7 +632,7 @@ export function ProjectsSection() {
                 {/* Image wrapper – no cropping, image always fits */}
                 <div className="relative flex-1 flex items-center justify-center bg-black/80 rounded-lg">
                   {/* Prev arrow */}
-                  {project.images.length > 1 && (
+                  {images.length > 1 && (
                     <button
                       type="button"
                       onClick={goToPrevImage}
@@ -551,7 +655,7 @@ export function ProjectsSection() {
                   />
 
                   {/* Next arrow */}
-                  {project.images.length > 1 && (
+                  {images.length > 1 && (
                     <button
                       type="button"
                       onClick={goToNextImage}
