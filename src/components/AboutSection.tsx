@@ -21,9 +21,9 @@ export function AboutSection() {
         <div className="space-y-8">
           <div className="space-y-6">
             <p className="text-muted-foreground leading-relaxed text-justify" style={{ fontSize: "var(--text-base)" }}>
-              I’m a product-focused CAD designer with a strong foundation in mechanical design, prototyping, and product development. 
-              I specialize in creating precise, production-ready models using Fusion 360, Onshape, and SolidWorks, translating ideas 
-              into functional parts and assemblies that move efficiently from concept to fabrication. My work emphasizes 
+              I’m a product-focused CAD designer and product developer with a strong foundation in mechanical design, prototyping, and 
+              product development. I specialize in creating precise, production-ready models using Fusion 360, Onshape, and SolidWorks, 
+              translating ideas into functional parts and assemblies that move efficiently from concept to fabrication. My work emphasizes 
               manufacturability and real-world performance, with hands-on experience preparing designs for 3D printing, CNC machining, 
               and small-batch production. I prioritize tolerances, fit, structural reliability, and material efficiency to ensure every 
               product I design is not only accurate in CAD but dependable in physical use.
