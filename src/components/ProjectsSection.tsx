@@ -264,7 +264,8 @@ export function ProjectsSection() {
         // { src: "ProdPics/CoreXY-.png", caption: "caption" },
         // { src: "ProdPics/CoreXY-.png", caption: "caption" },
       ],
-    },
+    }
+    /*,
     {
       id: 5,
       title: "Applied Mechanical Redesigns & Functional Add-Ons",
@@ -331,7 +332,7 @@ export function ProjectsSection() {
           ],
         },
       ],
-    },
+    },*/
   ];
 
 

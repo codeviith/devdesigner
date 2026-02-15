@@ -21,13 +21,12 @@ export function AboutSection() {
         <div className="space-y-8">
           <div className="space-y-6">
             <p className="text-muted-foreground leading-relaxed text-justify" style={{ fontSize: "var(--text-base)" }}>
-              I'm a versatile CAD Designer with a strong foundation in mechanical design, 3D modeling, and product
-              development. I specialize in creating precise, production-ready models using Fusion 360, OnShape, and
-              SolidWorks—tools I use daily to design mechanical parts, assemblies, and functional prototypes. My CAD
-              work emphasizes manufacturability, with experience preparing models for 3D printing (FDM/SLA), CNC
-              machining, and laser cutting. I prioritize key design elements such as tolerances, fit, and material
-              efficiency to ensure that every part I create not only looks right in CAD but performs reliably in
-              real-world applications.
+              I’m a product-focused CAD designer with a strong foundation in mechanical design, prototyping, and product development. 
+              I specialize in creating precise, production-ready models using Fusion 360, Onshape, and SolidWorks, translating ideas 
+              into functional parts and assemblies that move efficiently from concept to fabrication. My work emphasizes 
+              manufacturability and real-world performance, with hands-on experience preparing designs for 3D printing, CNC machining, 
+              and small-batch production. I prioritize tolerances, fit, structural reliability, and material efficiency to ensure every 
+              product I design is not only accurate in CAD but dependable in physical use.
             </p>
 
             <div
@@ -75,22 +74,24 @@ export function AboutSection() {
             </div>
 
             <p className="text-muted-foreground leading-relaxed text-justify" style={{ fontSize: "var(--text-base)" }}>
-              Much of my recent CAD work has been with Display Your Passion Like a Boss, LLC, where I contributed to the
-              design and modeling of mechanical components for physical products, while also supporting the development
-              of an accompanying web platform. In this role, I was involved in everything from early concept modeling to
-              technical drawing production, giving me hands-on experience with the full design-to-manufacture pipeline.
-              Outside of professional work, I've led several self-directed projects—building a fully functional electric
-              skateboard, customizing a CoreXY 3D printer, and designing high-performance R/C vehicles and aircraft.
-              These projects allowed me to take complete ownership of the development process and strengthened my
-              ability to turn detailed digital models into reliable, tested prototypes.
+              Professionally, I contributed to product development at Display Your Passion Like a Boss, LLC, where I modeled mechanical 
+              components for commercial products while supporting the broader design-to-manufacture (DFM) pipeline. My work ranged from 
+              early concept modeling and parametric design to prototype validation and production refinement. Beyond professional work, 
+              I lead self-directed product builds—including a functional electric skateboard, an electric utility transport vehicle (EUTV), 
+              a customized CoreXY 3D printer, and multiple product redesign and improvement projects. These projects strengthened my 
+              ability to prototype quickly, refine designs through real-world feedback, and carry products from idea to working 
+              implementation.
             </p>
 
             <p className="text-muted-foreground leading-relaxed text-justify" style={{ fontSize: "var(--text-base)" }}>
-              I also have a working knowledge of Python and JavaScript, which I'm exploring as tools for CAD automation
-              and parametric design scripting. I'm particularly interested in projects that blend mechanical design with
-              meaningful impact—whether in consumer products, hardware development, or biomedical devices. Whether
-              working independently or alongside a team, I'm committed to delivering thoughtful, functional designs that
-              are built to perform and built to last.
+              I’m especially drawn to product environments that value experimentation, iteration, and continuous improvement. My approach 
+              is design-first, grounded in thoughtful planning, careful modeling, and hands-on prototyping, then validated through 
+              real-world builds. I also bring working knowledge of Python and JavaScript to support automation and parametric design 
+              scripting, enabling more efficient and repeatable workflows. In that context, I’m particularly interested in projects 
+              that blend mechanical design with meaningful impact—ranging from consumer products and hardware development to robotics, 
+              electromechanical systems, tools and equipment, and biomedical applications. Whether working independently or alongside a 
+              team, I’m committed to delivering thoughtful, functional designs built to perform and built to last. I thrive in spaces 
+              where products evolve through testing, refinement, and practical problem-solving.
             </p>
 
             <div className="flex flex-wrap gap-2">
