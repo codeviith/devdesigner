@@ -24,31 +24,31 @@ export const DesignProcessSection = () => {
       isImage: true,
       title: "Parametric Modeling & Design for Manufacturability (DFM)",
       description:
-        "I build adaptive, feature-driven CAD models optimized for CNC machining, FDM/SLA 3D printing, and sheet-metal fabrication. This ensures fast iteration, scalable design changes, and smooth handoff to manufacturing workflows.",
+        "I build adaptive, feature-driven CAD models optimized for CNC machining, FDM/SLA 3D printing, and sheet-metal workflows. This ensures fast iteration, scalable design changes, and smooth handoff to manufacturing workflows.",
     },
     {
       icon: RefreshCw,
       title: "Iterative Design & Prototyping",
       description:
-        "My development cycle focuses on rapid modeling, prototyping, testing, and refinement. Each iteration improves mechanical performance, usability, and durability through structured feedback and real-world testing.",
+        "My development cycle focuses on rapid modeling, prototyping, testing, and refinement. Each iteration improves mechanical performance, usability, and durability through structured feedback and real-world use.",
     },
     {
       icon: Ruler,
       title: "Tolerance & Fit Optimization",
       description:
-        "I apply GD&T principles to ensure precise part integration, reliable assemblies, and predictable mechanical behavior. This includes fine-tuning clearances, fit types, surface interactions, and functional constraints.",
+        "I apply GD&T-informed practices to ensure precise part integration, reliable assemblies, and predictable mechanical behavior. This includes fine-tuning clearances, fit types, surface interactions, and functional constraints.",
     },
     {
       icon: FlaskConical,
       title: "Material Testing & Post-Processing",
       description:
-        "I evaluate printed and machined parts for dimensional accuracy, structural integrity, and surface quality. My workflow includes sanding, smoothing, painting, and assembly to achieve functional and presentation-ready prototypes.",
+        "I evaluate printed and fabricated parts for dimensional accuracy, structural integrity, and surface quality. My workflow includes sanding, smoothing, painting, and assembly to achieve functional and presentation-ready prototypes.",
     },
     {
       icon: Cpu,
       title: "CAD Automation & Electronics Integration",
       description:
-        "Where applicable, I use Python/JavaScript for CAD automation and integrate Arduino-based sensors, motors, and electronics into mechanical assemblies—linking motion, structure, and behavior into cohesive prototypes.",
+        "Where applicable, I use JavaScript and Python to support CAD automation and design scripting, improving workflow efficiency and repeatability. I also integrate Arduino-based sensors, motors, and control systems into mechanical assemblies, linking structure, motion, and behavior into cohesive, testable prototypes.",
     },
   ];
 
@@ -62,7 +62,7 @@ export const DesignProcessSection = () => {
         "Functional goals",
         "Material, geometric, and tolerance constraints",
         "User needs and intended use cases",
-        "Manufacturing limitations",
+        "Manufacturing constraints",
         "Performance criteria",
       ],
     },
@@ -74,7 +74,7 @@ export const DesignProcessSection = () => {
       points: [
         "Geometric and mechanical options",
         "Alternative mechanisms",
-        "Assembly approaches",
+        "Assembly strategies",
         "Aesthetic considerations (when relevant)",
       ],
     },
@@ -88,7 +88,7 @@ export const DesignProcessSection = () => {
         "Build adaptable, feature-based parametric models",
         "Refine versions through iterative updates",
         "Validate geometry, tolerances, and fit",
-        "Prepare assemblies for motion, interference, and behavior checks",
+        "Prepare assemblies for motion, interference, and mechanism checks",
       ],
     },
     {
@@ -113,7 +113,7 @@ export const DesignProcessSection = () => {
       description: "Moving from CAD to physical testing, I evaluate:",
       points: [
         "Structural integrity and rigidity",
-        "Assembly logic and ease of assembly",
+        "Assembly flow and ease of assembly",
         "Ergonomics and usability",
         "Mechanical behavior",
         "Real-world tolerances",
@@ -142,7 +142,7 @@ export const DesignProcessSection = () => {
         "Exploded views",
         "Assembly instructions",
         "Manufacturing-ready files",
-        "Bill of materials (BOM)",
+        "Bill of materials (BOM), as needed",
       ],
     },
   ];
@@ -159,9 +159,9 @@ export const DesignProcessSection = () => {
           <p className="text-foreground/90 text-lg leading-relaxed text-justify">
             I approach product design with a structured, iterative workflow that combines thoughtful design practices
             with hands-on prototyping. My process emphasizes manufacturability, precision, and practical
-            problem-solving—moving from early concept modeling to material selection, tolerance refinement, and
-            real-world testing. My focus is to create functional, production-ready designs that perform reliably beyond
-            the CAD environment.
+            problem-solving—moving from early concepts through material selection, tolerance refinement, and
+            real-world testing. My focus is to create functional, production-ready designs that perform reliably in 
+            real use—not just in CAD.
           </p>
         </Card>
 
