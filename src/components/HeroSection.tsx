@@ -169,7 +169,7 @@ export function HeroSection({ scrollToSection }: HeroSectionProps) {
           aria-label="Scroll to explore"
         >
           <span className="text-sm font-mono tracking-wider">Scroll to explore</span>
-          <ArrowDown className="w-6 h-6 animate-bounce group-hover:text-primary-glow" />
+          <ArrowDown className="w-7 h-7 animate-bounce text-cyan-400 drop-shadow-[0_0_10px_rgba(34,211,238,0.9)] group-hover:text-cyan-300" />
         </button>
       </div>
     </section>

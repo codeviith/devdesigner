@@ -264,8 +264,8 @@ export function ProjectsSection() {
         // { src: "ProdPics/CoreXY-.png", caption: "caption" },
         // { src: "ProdPics/CoreXY-.png", caption: "caption" },
       ],
-    }
-    /*,
+    },
+    /*
     {
       id: 5,
       title: "Applied Mechanical Redesigns & Functional Add-Ons",
@@ -332,7 +332,8 @@ export function ProjectsSection() {
           ],
         },
       ],
-    },*/
+    },
+    */
   ];
 
 
@@ -505,7 +506,7 @@ export function ProjectsSection() {
                     Gallery
                   </h4>
 
-                  {/* Grouped gallery (for your redesign collection) */}
+                  {/* Grouped gallery [product redesign section] */}
                   {project.galleryGroups?.length ? (
                     <div className="space-y-10">
                       {project.galleryGroups.map((group: any, gIdx: number) => (
@@ -541,7 +542,7 @@ export function ProjectsSection() {
                             })}
                           </div>
 
-                          {/* subtle divider between mini-projects */}
+                          {/* divider between mini-projects */}
                           <div className="h-px bg-border/40" />
                         </div>
                       ))}
@@ -640,7 +641,7 @@ export function ProjectsSection() {
                   </DialogDescription>
                 </DialogHeader>
 
-                {/* Image wrapper – no cropping, image always fits */}
+                {/* Image wrapper – no cropping, always fits */}
                 <div className="relative flex-1 flex items-center justify-center bg-black/80 rounded-lg">
                   {/* Prev arrow */}
                   {images.length > 1 && (
@@ -658,7 +659,7 @@ export function ProjectsSection() {
                     </button>
                   )}
 
-                  {/* Image – fully contained in the available area */}
+                  {/* Image – fully contained */}
                   <img
                     src={imgSrc}
                     alt={caption}
@@ -687,7 +688,7 @@ export function ProjectsSection() {
                   {caption}
                 </p>
 
-                {/* Bottom Close Button – red gradient like project modal */}
+                {/* Bottom Close Button – red gradient */}
                 <div className="pt-2 border-t border-border/50">
                   <Button
                     onClick={closeLightbox}

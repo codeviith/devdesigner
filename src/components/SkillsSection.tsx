@@ -30,28 +30,29 @@ export function SkillsSection() {
     {
       icon: cadModelingCubeIcon,
       title: 'CAD Modeling',
-      desc: 'Parametric 3D parts, assemblies, and detailed drawings',
+      desc: 'Parametric 3D parts, assemblies, and production drawings',
       isImage: true
     },
     {
       icon: Package,
-      title: 'Product Design', desc: 'From concept to refined, manufacturable forms'
+      title: 'Product Design', 
+      desc: 'Concept development, refinement, and manufacturable form'
     },
     {
       icon: dfmCompassIcon,
-      title: 'Design for Manufacturing (DFM)',
-      desc: 'Optimized for cost, quality, and throughput',
+      title: 'Design for Manufacturing (DFM) & Assembly (DFA)',
+      desc: 'Optimized for manufacturability, assembly efficiency, and production reliability',
       isImage: true
     },
     {
       icon: FlaskConical,
       title: 'Research & Development (R&D)',
-      desc: 'Rapid iteration, testing, and validation'
+      desc: 'Rapid iteration, testing, and design validation'
     },
     {
       icon: Factory,
       title: 'Small-Scale Manufacturing & Post-Processing',
-      desc: 'CNC, 3D printing, finishing workflows'
+      desc: 'CNC, 3D printing, and finishing workflows'
     },
     {
       icon: TestTube,
@@ -64,17 +65,17 @@ export function SkillsSection() {
     {
       icon: Target,
       title: 'Precision-Focused',
-      description: 'Every design element serves a purpose with meticulous attention to detail'
+      description: 'Detail-driven design decisions that prioritize accuracy, fit, and functional performance'
     },
     {
       icon: Lightbulb,
       title: 'Innovation-Driven',
-      description: 'Pushing boundaries to create breakthrough product solutions'
+      description: 'Creative problem-solving that turns constraints into practical product solutions'
     },
     {
       icon: Users,
       title: 'User-Centric',
-      description: 'Designing with empathy and real-world usability in mind'
+      description: 'Design choices guided by usability, ergonomics, and real-world interaction'
     }
   ];
 
@@ -103,7 +104,7 @@ export function SkillsSection() {
         },
         {
           name: 'Blender',
-          description: '3D modeling and animation (WIP)'
+          description: '3D modeling and visualization (learning)'
         }
       ]
     },
@@ -135,7 +136,7 @@ export function SkillsSection() {
       ]
     },
     {
-      title: 'Engineering & Manufacturing',
+      title: 'Product Engineering & Manufacturing',
       icon: Factory,
       color: 'text-accent',
       skills: [
@@ -145,7 +146,7 @@ export function SkillsSection() {
         },
         {
           name: 'Manufacturing',
-          description: 'DFM and production optimization'
+          description: 'DFMA and production optimization'
         },
         {
           name: 'Prototyping',
@@ -164,7 +165,7 @@ export function SkillsSection() {
       skills: [
         {
           name: 'JavaScript | React',
-          description: 'Frontend web applications, UI logic, and interactivity'
+          description: 'Frontend tools, UI logic, and design-support applications'
         },
         {
           name: 'Python | Flask',
@@ -195,13 +196,13 @@ export function SkillsSection() {
     'Project Management',
     'Problem Solving',
     'Iterative Design',
-    'Quality Assurance',
+    'Design Validation',
     'Technical Documentation',
     'Materials Knowledge',
-    'Printer Maintenance',
-    'Electronics & Arduino',
+    'Equipment Calibration & Maintenance',
+    'Embedded Electronics Prototyping',
     'Raspberry Pi',
-    'UI/UX Principles'
+    'Interface & Usability (UI/UX) Design Principles'
   ];
 
   return (
