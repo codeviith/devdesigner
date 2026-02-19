@@ -67,36 +67,40 @@ export function ProjectsSection() {
   const projects = [
     {
       id: 1,
-      title: "Display System for Model Kits",
+      title: "Display System for Mecha Model Kits",
       subtitle: "Commercial Product Line",
       company: "Display Your Passion Like a Boss, LLC",
       role: "CAD Designer | Product Developer",
       tools: "Fusion 360 | Onshape | SLA & FDM 3D Printing | Post-Processing | Parametric Modeling",
-      projectType: "Commercial Product Prototyping | Small-Batch Production",
+      projectType: "Commercial Product Development | Small-Batch Production",
       years: "2021 – 2025",
       overview:
-        `The Display System for Model Kits is a modular, hangar-bay–inspired presentation platform designed to showcase collectible mecha kits. Developed as a commercial product, it required balancing structural strength, precise fit, visual fidelity, and manufacturability for small-batch SLA production. Although the system was designed primarily around 1/144-scale mecha kits, its modular architecture allows it to accommodate a range of kit sizes and dynamic poses.
+        `
+        The Display System is a modular, hangar-bay–inspired commercial product designed to showcase collectible mecha model kits with structural stability and visual impact. The project required balancing structural integrity, precision fit, visual fidelity, and manufacturability for repeatable small-batch SLA production.
 
-        This project covered full-cycle product development, including parametric CAD modeling, component design, iterative prototype testing, and production refinement. I designed modular SLA-printable parts optimized for stability and repeatability, ensuring both display-ready quality and collector-grade durability. Finalized designs were prepared for consistent, small-batch production and customer deployment.`,
+        While primarily optimized for 1/144-scale kits, the modular architecture was engineered to accommodate varying kit sizes, dynamic poses, and evolving configurations across future product generations. I led the full development cycle—including parametric CAD modeling, mechanical component design, iterative prototype validation, production refinement, and DFMA optimization.
+        
+        The finalized product line delivers collector-grade durability, precision interlocking assemblies, and scalable modular expansion—supporting reliable small-batch production and sustained commercial distribution.
+        `,
       goals: [
-        "Create a modular display system that accommodates a variety of mecha kit scales and poses while maintaining structural stability.",
-        "Support common model-kit scales—with primary optimization for 1/144 scale—while maintaining structural stability and compatibility with multiple display configurations.",
-        "Balance visual fidelity and mechanical strength to ensure the display feels premium while safely supporting collector-grade kits.",
-        "Optimize geometry, tolerances, and part orientation for efficient small-batch SLA production and repeatable fit.",
-        "Enable user customization through interchangeable components without compromising assembly simplicity or durability.",
-        "Preserve a cohesive, hangar-bay–inspired design language across all visible surfaces and accessory parts.",
+        "Develop a modular display system capable of supporting multiple mecha scales and dynamic poses while maintaining structural stability.",
+        "Optimize primarily for 1/144 scale while preserving compatibility across varied configurations.",
+        "Balance premium visual aesthetics with mechanical strength to ensure long-term collector use.",
+        "Refine geometry, tolerances, and part orientation for efficient small-batch SLA production and repeatable fit.",
+        "Enable user customization through interchangeable components without increasing assembly complexity.",
+        "Maintain a cohesive hangar-bay design language across structural and decorative elements.",
       ],
       contributions: [
-        "Designed modular mechanical components including structural frames, mounting brackets, paneling, and aesthetic shells tailored to mecha-themed displays.",
-        "Developed precision parametric CAD models optimized for SLA 3D printing, ensuring consistent tolerance fit, stability, and visually cohesive design language.",
-        "Executed iterative print testing to refine part strength, dimensional reliability, and ease of assembly across varying configurations.",
-        "Established display-specific mechanical considerations such as center-of-gravity stability, load distribution, and multi-angle mounting support.",
-        "Implemented post-processing workflows (sanding, priming, assembly fitting) to deliver presentation-quality surfaces for end users.",
-        "Collaborated on small-batch production planning, ensuring the design aligned with print efficiency, post-processing requirements, and customer expectations.",
-        "Created interchangeable accessory components allowing users to customize layout, height, and display orientation.",
+        "Designed modular structural frames, mounting brackets, panel systems, and aesthetic shells tailored to mecha-themed display environments.",
+        "Developed precision parametric CAD assemblies optimized for SLA printing, ensuring consistent tolerance control and stable interlocking connections.",
+        "Conducted iterative print testing to refine dimensional accuracy, structural rigidity, and assembly repeatability across multiple configurations.",
+        "Incorporated center-of-gravity analysis, load distribution planning, and multi-angle mounting support to ensure display stability.",
+        "Implemented structured post-processing workflows (sanding, priming, surface refinement, fit validation) to achieve presentation-ready quality.",
+        "Aligned design decisions with manufacturing constraints, improving print efficiency and reducing post-processing labor.",
+        "Created interchangeable accessory components enabling customers to customize layout and display orientation.",
       ],
       outcomes: [
-        "Delivered a modular display system with strong structural reliability, precise component fit, and cohesive visual presentation—supporting collector-scale mecha kits across multiple configurations while reducing print time and post-processing effort through optimized SLA-ready geometry.",
+        "Delivered a commercially viable modular display system combining structural reliability, precision-fit assemblies, and cohesive visual design—achieving production efficiency while maintaining collector-grade presentation standards.",
       ],
       images: [
         { src: "ProdPics/DYPLAB-1.png", caption: "Fully assembled product — modular, hangar-bay–inspired display system" },
@@ -164,34 +168,37 @@ export function ProjectsSection() {
       id: 3,
       title: "Electric Utility Transport Vehicle (EUTV)",
       subtitle: "Functional Prototype",
-      tools: "Onshape | CNC Machining | Welding | FDM 3D Printing | Hand Fabrication Tools | Electrical Wiring Integration | Mechanical System Design",
+      tools: "Onshape | CNC Machining | Welding | FDM 3D Printing | Hand Fabrication | Electrical Wiring Integration | Mechanical System Design",
       projectType: "Personal Product Development & Mechanical Prototyping",
       years: "2023 – 2024",
       overview:
-        `The Electric Utility Transport Vehicle (EUTV) is a custom-built mobility prototype created to safely transport full-size trash and recycling bins up and down a steep residential incline. Designed and fabricated from the ground up, it spans the full product development cycle—from CAD modeling and structural design to welding, electronics integration, and functional testing. The system was engineered around key performance needs, including uphill torque, load stability, durable frame construction, and intuitive operator control.
+        `
+        The Electric Utility Transport Vehicle (EUTV) is a custom-built utility vehicle developed to safely transport full-size trash and recycling bins up and down a steep residential incline. Designed and fabricated from the ground up, the project spans the full development cycle—from CAD modeling and structural design to welding, electronics integration, and real-world validation testing.
 
-        Using Onshape, I designed and printed custom components, optimized drivetrain gearing for incline performance, and designed a reinforced welded chassis to support heavy loads. Electrical subsystems—including lighting, switching, and ESC-controlled power delivery—were integrated for reliability and safety. A quick-attach bin mechanism provides secure, ergonomic loading. The final prototype demonstrates applied mechanical design, iterative development, and practical problem-solving within real-world constraints.`,
+        The vehicle was engineered around key performance requirements including uphill torque capacity, load stability, durable frame construction, and intuitive operator control. Using Onshape, I designed custom drivetrain components, optimized gear ratios for incline performance, and fabricated a reinforced welded steel chassis to support repeated heavy-load operation. Electrical subsystems—including ESC-controlled power delivery, lighting, and protected wiring layouts—were integrated to ensure reliability and operational safety.
+        
+        The completed prototype demonstrates applied mechanical design, drivetrain optimization, fabrication planning, and real-world performance validation under practical operating constraints.
+        `,
       goals: [
-        "Enable safe, controllable transport of trash and recycling bins on a steep incline with minimal operator effort.",
-        "Design a robust chassis and suspension system capable of handling outdoor use, uneven terrain, and repeated loaded trips.",
-        "Optimize drivetrain gearing for sufficient uphill torque while maintaining manageable speed and energy efficiency.",
-        "Integrate intuitive, ergonomic controls so non-technical users can operate the vehicle confidently and safely.",
-        "Build the platform to be modular and upgradeable, allowing future enhancements in powertrain, attachments, and safety features.",
+        "Enable safe, controlled transport of full-sized bins on a steep incline with minimal operator effort.",
+        "Develop a robust welded chassis capable of handling repeated loaded trips on uneven terrain.",
+        "Optimize drivetrain gearing to maximize uphill torque while maintaining manageable speed and energy efficiency.",
+        "Integrate intuitive, ergonomic controls to ensure confident and safe operation of the vehicle.",
+        "Design the vehicle with modularity in mind to allow future upgrades to the powertrain, attachments, and safety features.",
       ],
       contributions: [
-        "Designed and fabricated a reinforced steel chassis using welded tubing, achieving the stability and load-bearing strength required for uphill transport of heavy bins.",
-        "Modeled and optimized drivetrain gear ratios in Onshape to balance torque, speed, and motor efficiency for steep-grade performance.",
-        "Developed a vibration-dampening suspension linkage, improving traction, ride comfort, and component longevity during uneven-terrain use.",
-        "Configured the vehicle's electrical system, including ESC tuning, battery distribution, and safe wiring routing for reliable operation under variable loads.",
-        "Integrated LED headlights, taillights, and turn signals to enhance visibility and establish functional safety features consistent with small-form mobility vehicles.",
-        "Constructed a quick-attach bin hook mechanism designed for secure latching, ergonomic handling, and fast engagement/disengagement during transport.",
-        "Produced precision CAD models for all custom components, including motor mounts, structural brackets, control housings, and attachment interfaces.",
-        "Selected materials and fabricated components for durability and modularity, allowing for maintenance, upgrades, and future design iterations.",
-        "Designed the operator interface, refining steering geometry, seating position, and control placement for comfort, stability, and intuitive operation.",
-        "Validated performance through incline testing, confirming torque output, stability under load, and reliability during repeated uphill and downhill operation.",
+        "Designed and fabricated a reinforced welded steel chassis, achieving the structural strength required for repeated uphill transport of heavy loads.",
+        "Modeled and refined drivetrain gear ratios in Onshape to balance torque output, motor efficiency, and controlled incline speed.",
+        "Developed a vibration-dampening suspension linkage to improve traction, ride stability, and component longevity over uneven terrain.",
+        "Configured the electrical system, including ESC tuning, battery distribution, protected wiring routing, and fail-safe switching for reliable operation.",
+        "Integrated LED headlights, taillights, and turn signals to enhance visibility and functional safety.",
+        "Designed and built a quick-attach bin mechanism enabling secure latching, ergonomic handling, and rapid engagement/disengagement.",
+        "Selected durable materials and fabrication methods to support serviceability, long-term reliability, and future modifications.",
+        "Refined steering geometry, seating position, and control placement to improve comfort, balance, and operator confidence.",
+        "Validated performance through controlled incline testing, confirming torque capacity, load stability, and repeatable uphill/downhill operation.",
       ],
       outcomes: [
-        "Provided a safe uphill and downhill transport of heavy residential garbage bins through optimized torque delivery, improved vehicle stability, and ergonomic operator-focused design.",
+        "Delivered a purpose-built utility vehicle capable of safe, repeatable uphill/downhill transport of heavy residential bins—achieving stable torque delivery, structural durability, and operator-focused control in real-world conditions.",
       ],
       images: [
         // Product
