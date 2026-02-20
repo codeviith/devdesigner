@@ -119,7 +119,13 @@ export function ProjectsSection() {
       projectType: "Personal Product Development & Prototyping",
       years: "2016 – Present",
       overview:
-        `The Electric Skateboard is a self-directed product development project focused on designing and integrating a compact, high-performance personal electric vehicle. Using a parametric CAD workflow, I designed and developed drivetrain mounts, structural brackets, enclosures, and vibration-resistant components that integrate precisely with dual brushless motors, a lithium-ion battery system, and ESC-based power delivery. Through iterative prototyping and real-world field testing, I refined deck geometry, motor positioning, shock absorption, and electronic layout to reduce vibration, improve ride stability, and enhance control responsiveness. The final system demonstrates end-to-end product development—combining CAD modeling, mechanical design, materials optimization, and electronics integration—to deliver a durable, user-safe electric vehicle capable of consistent performance across varied outdoor terrain`,
+        `
+        The Electric Skateboard is a self-directed product development project centered on designing and integrating a compact, high-performance personal electric vehicle. Developed from concept through real-world validation, the project required balancing structural durability, vibration control, power delivery, packaging efficiency, and rider safety within a constrained footprint.
+        
+        Using a parametric CAD workflow, I designed drivetrain mounts, structural brackets, motor enclosures, battery housings, and vibration-resistant components that integrate with dual brushless motors, a lithium-ion battery system, and ESC-controlled power delivery. Component geometry, mounting strategies, and enclosure layouts were further refined to ensure proper torque transmission, thermal management, serviceability, and long-term durability under dynamic load conditions.
+
+        Through iterative prototyping and field testing, I optimized the deck geometry, motor positioning, shock absorption, and electronic routing to reduce vibration, improve ride stability, and enhance throttle responsiveness. The completed vehicle demonstrates end-to-end product development—combining mechanical design, materials selection, and electronics integration into a durable, rider-safe electric vehicle capable of consistent performance across varied terrain.
+        `,
       goals: [
         "Develop a high-speed electric skateboard vehicle that delivers stability, predictability, and rider safety in real-world outdoor conditions.",
         "Integrate mechanical, electrical, and structural subsystems into a compact, serviceable build with clean assembly.",
@@ -226,7 +232,13 @@ export function ProjectsSection() {
       projectType: "Personal Mechanical Development & Performance Optimization",
       years: "2020 – 2023",
       overview:
-        `This project involved building a CoreXY 3D printer from the ground up, sourcing individual components and assembling the machine based on an open-source architecture while implementing substantial mechanical redesigns. Rather than replicating the reference build, I redesigned key structural and motion subsystems to improve rigidity, precision, thermal stability, and serviceability. Using parametric CAD modeling, I refined the frame architecture, CoreXY motion mechanism, heating and cooling paths, and modular mechanical assemblies. Structural reinforcements and calibration adjustments improved belt control, Z-axis alignment, and vibration damping, resulting in significantly higher dimensional repeatability and print consistency. The final build reflects deliberate mechanical refinement and performance-driven redesign—elevating an open-source reference into a precision-tuned, production-capable machine.`,
+        `
+        This project involved building a CoreXY 3D printer from the ground up, sourcing individual components and assembling the machine based on an open-source architecture while implementing substantial mechanical redesigns. Rather than replicating the reference build, I reworked key structural and motion subsystems to improve rigidity, precision, thermal stability, and long-term serviceability.
+        
+        The frame was reinforced to increase structural stiffness, and the CoreXY motion system was refined for tighter belt control and smoother kinematics. Heating and cooling paths were optimized for consistent extrusion, while modular mechanical assemblies were redesigned to improve calibration access, maintenance efficiency, and future upgrade flexibility.
+
+        Through iterative calibration and dimensional validation, I improved Z-axis alignment, reduced vibration, and increased print repeatability. The completed machine reflects deliberate mechanical refinement—transforming an open-source reference design into a precision-tuned system capable of dependable, high-accuracy part production.
+        `,
       goals: [
         "Build a CoreXY 3D printer from the ground up while implementing substantial structural and motion-system redesign and improvements.",
         "Increase frame rigidity and motion stability to support higher print speeds without sacrificing dimensional accuracy.",
@@ -343,6 +355,50 @@ export function ProjectsSection() {
     },
     */
   ];
+
+
+
+
+  /*  ***** UPDATED PROJECT ID#5 *****
+  Applied Mechanical Redesigns & Functional Add-Ons
+  
+  Iterative Product Improvements
+  
+  Tools & Methods: Fusion 360 | Onshape | FDM 3D Printing | Design for Manufacturability (DFM) | Human-Centered Design | Mechanical Optimization
+  Project Type: Applied Product Redesign & Functional Enhancement
+  Years Active: 2021 – Present
+  
+  Overview
+  
+  This project series focuses on improving and reinterpreting existing consumer and hobbyist products by addressing usability gaps, structural limitations, and ergonomic constraints. Rather than developing entirely new products, these builds emphasize applied mechanical redesign, compatibility-driven enhancements, and functional add-ons that extend the capability of existing systems.
+  
+  Through structured problem evaluation and iterative prototyping, I developed parametric redesigns in Fusion 360 and Onshape to improve durability, fit precision, performance, and user interaction while maintaining compatibility with the original product architecture. Across multiple development cycles, the work expanded into modular add-ons, enclosure systems, and integrated mechanisms validated through desktop fabrication and real-world use testing.
+  
+  These redesigns demonstrate practical constraint-based design thinking, tolerance refinement, and value-driven improvements that transform off-the-shelf products into more durable, efficient, and purpose-optimized solutions.
+  
+  Design Goals
+  
+  • Identify real-world limitations in existing products and translate them into targeted redesign objectives.
+  • Improve durability, fit, ergonomics, and usability while preserving compatibility with original product geometry and workflows.
+  • Apply DFM principles to ensure redesigned components can be produced efficiently using accessible fabrication methods.
+  • Use iterative prototyping and functional testing to refine performance, reliability, and interaction quality.
+  
+  Key Highlights
+  
+  • Evaluated existing products to identify structural weaknesses, workflow inefficiencies, and ergonomic friction points.
+  • Executed CAD-driven redesigns emphasizing manufacturability, modularity, and long-term durability.
+  • Developed custom assemblies, mechanical add-ons, and integrated enclosure systems that enhanced functionality and usability.
+  • Applied DFM strategies to reduce material waste, simplify assembly paths, and improve repeatable fit.
+  • Validated dimensional accuracy, tolerance control, and mechanical stability through iterative prototyping cycles.
+  • Balanced functional upgrades with visual cohesion to maintain product presentation quality.
+  • Integrated mechanical, enclosure, and light electronic components where applicable to expand product capability.
+  
+  Outcomes
+  
+  • Delivered measurable improvements in usability, durability, and functional performance across multiple products—demonstrating applied redesign expertise and system-level integration within real-world constraints.
+  */
+
+
 
 
   return (
