@@ -91,7 +91,13 @@ export function ContactSection() {
                     return (
                       <div key={method.type} className="group" style={{ animationDelay: `${index * 100}ms` }}>
                         <Component
-                          {...(!isNonClickable && { href: method.action })}
+                          {...(!isNonClickable && {
+                            href: method.action,
+                            ...(method.type === "LinkedIn" && {
+                              target: "_blank",
+                              rel: "noopener noreferrer"
+                            })
+                          })}
                           className={`block p-4 rounded-xl border border-border/50 bg-surface transition-all duration-300 
                             ${!isNonClickable ? "card-hover group hover:scale-105 cursor-pointer" : "cursor-default"}
                             w-full sm:w-[320px] md:w-[360px]`}

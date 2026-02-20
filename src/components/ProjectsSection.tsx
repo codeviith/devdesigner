@@ -71,7 +71,7 @@ export function ProjectsSection() {
       subtitle: "Commercial Product Line",
       company: "Display Your Passion Like a Boss, LLC",
       role: "CAD Designer | Product Developer",
-      tools: "Fusion 360 | Onshape | SLA & FDM 3D Printing | Post-Processing | Parametric Modeling",
+      tools: "Fusion 360 | Onshape | SLA & FDM 3D Printing | Post-Processing | Parametric CAD Modeling",
       projectType: "Commercial Product Development | Small-Batch Production",
       years: "2021 – 2025",
       overview:
@@ -115,7 +115,7 @@ export function ProjectsSection() {
       id: 2,
       title: "Electric Skateboard",
       subtitle: "Custom Engineered Build",
-      tools: "Fusion 360 | Onshape | FDM 3D Printing | Parametric Modeling | Mechanical Design | Electronics Integration",
+      tools: "Fusion 360 | Onshape | FDM 3D Printing | Parametric CAD Modeling | Mechanical Design | Electronics Integration",
       projectType: "Personal Product Development & Prototyping",
       years: "2016 – Present",
       overview:
@@ -135,7 +135,7 @@ export function ProjectsSection() {
       ],
       contributions: [
         "Modeled and assembled custom drivetrain mounts, motor housings, and structural brackets to ensure precise alignment and efficient torque transmission.",
-        "Applied parametric modeling and stress analysis to refine deck geometry, motor positioning, and load distribution for stability at higher speeds.",
+        "Applied parametric CAD modeling and stress analysis to refine deck geometry, motor positioning, and load distribution for stability at higher speeds.",
         "Fabricated high-tolerance 3D-printed components that balance lightweight construction with durability and vibration resistance.",
         "Integrated and tuned dual brushless motors, ESCs, and a lithium-ion battery pack to achieve synchronized acceleration and controlled braking.",
         "Conducted field testing and iterative tuning, improving control responsiveness, shock absorption, and rider comfort.",
@@ -172,14 +172,14 @@ export function ProjectsSection() {
     },
     {
       id: 3,
-      title: "Electric Utility Transport Vehicle (EUTV)",
-      subtitle: "Functional Prototype",
+      title: "Electric Utility Vehicle (EUV)",
+      subtitle: "Utility Vehicle Prototype",
       tools: "Onshape | CNC Machining | Welding | FDM 3D Printing | Hand Fabrication | Electrical Wiring Integration | Mechanical System Design",
       projectType: "Personal Product Development & Mechanical Prototyping",
       years: "2023 – 2024",
       overview:
         `
-        The Electric Utility Transport Vehicle (EUTV) is a custom-built utility vehicle developed to safely transport full-size trash and recycling bins up and down a steep residential incline. Designed and fabricated from the ground up, the project spans the full development cycle—from CAD modeling and structural design to welding, electronics integration, and real-world validation testing.
+        The Electric Utility Vehicle (EUV) is a custom-built utility vehicle developed to safely transport full-size trash and recycling bins up and down a steep residential incline. Designed and fabricated from the ground up, the project spans the full development cycle—from CAD modeling and structural design to welding, electronics integration, and real-world validation testing.
 
         The vehicle was engineered around key performance requirements including uphill torque capacity, load stability, durable frame construction, and intuitive operator control. Using Onshape, I designed custom drivetrain components, optimized gear ratios for incline performance, and fabricated a reinforced welded steel chassis to support repeated heavy-load operation. Electrical subsystems—including ESC-controlled power delivery, lighting, and protected wiring layouts—were integrated to ensure reliability and operational safety.
         
@@ -208,27 +208,27 @@ export function ProjectsSection() {
       ],
       images: [
         // Product
-        { src: "ProdPics/EUTV-1.png", caption: "Functional prototype — side view of vehicle architecture showing seating module, steering assembly, pedal controls, rear motor system, and integrated utility hitch" },
-        { src: "ProdPics/EUTV-2.jpg", caption: "Operational lighting system — headlight, taillight, and underbody LED configuration validating visibility and safe night-time operation" },
-        { src: "ProdPics/EUTV-3.png", caption: "Turn signal lighting — left and right LED indicators supporting safe directional signaling during operation" },
-        { src: "ProdPics/EUTV-4.png", caption: "Taillight safety system — dynamic brightness response during braking with integrated rear turn signals" },
-        { src: "ProdPics/EUTV-5.png", caption: "Steering control interface — top-down view of steering wheel with integrated toggle switches for headlights, turn signals, and battery monitoring" },
-        { src: "ProdPics/EUTV-6.png", caption: "Operator dashboard controls — auxiliary switch panel managing underbody lighting, regenerative braking, performance mode, and parking functions" },
-        { src: "ProdPics/EUTV-7.png", caption: "Driver safety system — seat belt integration with multi-position gear selector supporting forward and reverse transmission control" },
-        { src: "ProdPics/EUTV-8.png", caption: "Battery protection enclosure — lithium-ion pack secured in a fire-resistant sleeve housed in a vented steel compartment shielding against debris, dust, and moisture while providing layered mitigation against thermal runaway risk" },
-        { src: "ProdPics/EUTV-9.png", caption: "Electrical system integration — motor controller, power electronics, and organized wiring supporting safe and reliable vehicle operation" },
-        { src: "ProdPics/EUTV-10.png", caption: "Rear drivetrain assembly — geared motor drive with 3D-printed chain guard designed to protect moving components from debris during load operation" },
-        { src: "ProdPics/EUTV-11.png", caption: "Front steering mechanism — tie-rod linkage and compression spring system improving control, ride comfort, and vibration absorption" },
-        { src: "ProdPics/EUTV-12.png", caption: "Utility hitch integration — modified hauler attachment designed to transport trash bins up and down steep inclines" },
-        { src: "ProdPics/EUTV-13.png", caption: "Flatbed trailer configuration — modular trailer system enabling transport of tools, equipment, and general cargo" },
-        { src: "ProdPics/EUTV-14.png", caption: "Passenger trailer configuration — single-seated attachment demonstrating safe two-person transport capability" },
+        { src: "ProdPics/EUV-1.png", caption: "Functional prototype — side view of vehicle architecture showing seating module, steering assembly, pedal controls, rear motor system, and integrated utility hitch" },
+        { src: "ProdPics/EUV-2.jpg", caption: "Operational lighting system — headlight, taillight, and underbody LED configuration validating visibility and safe night-time operation" },
+        { src: "ProdPics/EUV-3.png", caption: "Turn signal lighting — left and right LED indicators supporting safe directional signaling during operation" },
+        { src: "ProdPics/EUV-4.png", caption: "Taillight safety system — dynamic brightness response during braking with integrated rear turn signals" },
+        { src: "ProdPics/EUV-5.png", caption: "Steering control interface — top-down view of steering wheel with integrated toggle switches for headlights, turn signals, and battery monitoring" },
+        { src: "ProdPics/EUV-6.png", caption: "Operator dashboard controls — auxiliary switch panel managing underbody lighting, regenerative braking, performance mode, and parking functions" },
+        { src: "ProdPics/EUV-7.png", caption: "Driver safety system — seat belt integration with multi-position gear selector supporting forward and reverse transmission control" },
+        { src: "ProdPics/EUV-8.png", caption: "Battery protection enclosure — lithium-ion pack secured in a fire-resistant sleeve housed in a vented steel compartment shielding against debris, dust, and moisture while providing layered mitigation against thermal runaway risk" },
+        { src: "ProdPics/EUV-9.png", caption: "Electrical system integration — motor controller, power electronics, and organized wiring supporting safe and reliable vehicle operation" },
+        { src: "ProdPics/EUV-10.png", caption: "Rear drivetrain assembly — geared motor drive with 3D-printed chain guard designed to protect moving components from debris during load operation" },
+        { src: "ProdPics/EUV-11.png", caption: "Front steering mechanism — tie-rod linkage and compression spring system improving control, ride comfort, and vibration absorption" },
+        { src: "ProdPics/EUV-12.png", caption: "Utility hitch integration — modified hauler attachment designed to transport trash bins up and down steep inclines" },
+        { src: "ProdPics/EUV-13.png", caption: "Flatbed trailer configuration — modular trailer system enabling transport of tools, equipment, and general cargo" },
+        { src: "ProdPics/EUV-14.png", caption: "Passenger trailer configuration — single-seated attachment demonstrating safe two-person transport capability" },
       ],
     },
     {
       id: 4,
       title: "Customized CoreXY 3D Printer Build",
       subtitle: "Ground-Up Mechanical Build & Architectural Redesign",
-      tools: "Fusion 360 | FDM 3D Printing | Parametric Design | CNC Machining | Motion Calibration | Hardware & Electronics Integration",
+      tools: "Fusion 360 | FDM 3D Printing | Parametric CAD Design | CNC Machining | Motion Calibration | Hardware & Electronics Integration",
       projectType: "Personal Mechanical Development & Performance Optimization",
       years: "2020 – 2023",
       overview:
@@ -247,11 +247,10 @@ export function ProjectsSection() {
         "Achieve a precision-calibrated CoreXY printer capable of sustained, dependable production-quality output.",
       ],
       contributions: [
-        "Designed and assembled modular mechanical subsystems including tool changers, printhead mounts, and automated bed-leveling mechanisms to improve precision and serviceability.",
+        "Designed and assembled modular mechanical subsystems—including tool changers, printhead mounts, and automated bed-leveling mechanisms—to improve precision, serviceability, and support rapid part customization and future system upgrades.",
         "Fabricated custom structural reinforcements to increase frame rigidity, reduce vibration, and stabilize linear motion at elevated print speeds.",
         "Implemented calibration mechanisms to fine-tune belt tension, Z-axis alignment, and printhead positioning, improving dimensional consistency.",
         "Redesigned fan ducting, extruder pathways, and electronics enclosures to enhance cooling efficiency and thermal stability.",
-        "Developed parametric, feature-driven CAD modeling for rapid part customization and future system upgrades.",
         "Conducted iterative calibration cycles to validate motion stability, dimensional repeatability, and surface finish quality.",
         "Established a modular wiring layout to simplify diagnostics and replacement of stepper drivers, limit switches, and heating elements.",
         "Benchmarked print consistency and motion stability against retail machines, achieving measurable gains in dimensional precision and repeatability.",
