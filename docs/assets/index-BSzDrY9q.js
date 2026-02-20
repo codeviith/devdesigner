@@ -407,7 +407,7 @@ For more information, see https://radix-ui.com/primitives/docs/components/${t.do
           rounded-lg
           opacity-90
           object-contain
-          h-auto`,style:{top:"235%",right:"clamp(3%, 10%, 10%)",width:"clamp(12rem, 22vw, 22rem)"}}),u.jsx("img",{src:"ProdPics/EUTV-para.png",alt:"",className:`
+          h-auto`,style:{top:"235%",right:"clamp(3%, 10%, 10%)",width:"clamp(12rem, 22vw, 22rem)"}}),u.jsx("img",{src:"ProdPics/EUV-para.png",alt:"",className:`
           absolute
           rounded-lg
           opacity-90
