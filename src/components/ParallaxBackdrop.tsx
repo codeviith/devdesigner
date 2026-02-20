@@ -94,7 +94,7 @@ export function ParallaxBackdrop() {
 
       {/* Image 5 */}
       <img 
-        src="ProdPics/EUTV-para.png" 
+        src="ProdPics/EUV-para.png" 
         alt=""
         className="
           absolute
