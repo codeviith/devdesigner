@@ -161,7 +161,7 @@ export const DesignProcessSection = () => {
             with hands-on prototyping. My process emphasizes manufacturability, precision, and practical
             problem-solving—moving from early concepts through material selection, tolerance refinement, and
             real-world testing. My focus is to create functional, production-ready designs that perform reliably in 
-            real use—not just in CAD.
+            real use—ensuring that CAD models translate successfully into real-world products.
           </p>
         </Card>
 

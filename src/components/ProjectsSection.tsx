@@ -71,7 +71,7 @@ export function ProjectsSection() {
       subtitle: "Commercial Product Line",
       company: "Display Your Passion Like a Boss, LLC",
       role: "CAD Designer | Product Developer",
-      tools: "Fusion 360 | Onshape | SLA & FDM 3D Printing | Post-Processing | Parametric CAD Modeling",
+      tools: "Fusion 360 | SolidWorks | SLA & FDM 3D Printing | CNC Machining | Post-Processing | Parametric CAD Modeling",
       projectType: "Commercial Product Development | Small-Batch Production",
       years: "2021 – 2025",
       overview:
@@ -120,7 +120,7 @@ export function ProjectsSection() {
       years: "2016 – Present",
       overview:
         `
-        The Electric Skateboard is a self-directed product development project centered on designing and integrating a compact, high-performance personal electric vehicle. Developed from concept through real-world validation, the project required balancing structural durability, vibration control, power delivery, packaging efficiency, and rider safety within a constrained footprint.
+        The Electric Skateboard is a self-directed product development project centered on designing and integrating a compact, high-performance personal electric vehicle. The current build represents the seventh major iteration, refined through years of structured redesign, performance tuning, and real-world validation. The project required balancing structural durability, vibration control, power delivery, packaging efficiency, and rider safety within a constrained footprint.
         
         Using a parametric CAD workflow, I designed drivetrain mounts, structural brackets, motor enclosures, battery housings, and vibration-resistant components that integrate with dual brushless motors, a lithium-ion battery system, and ESC-controlled power delivery. Component geometry, mounting strategies, and enclosure layouts were further refined to ensure proper torque transmission, thermal management, serviceability, and long-term durability under dynamic load conditions.
 

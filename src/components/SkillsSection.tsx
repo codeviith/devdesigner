@@ -40,7 +40,7 @@ export function SkillsSection() {
     },
     {
       icon: dfmCompassIcon,
-      title: 'Design for Manufacturing (DFM) & Assembly (DFA)',
+      title: 'Design for Manufacturing & Assembly (DFMA)',
       desc: 'Optimized for manufacturability, assembly efficiency, and production reliability',
       isImage: true
     },
