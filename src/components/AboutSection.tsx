@@ -77,7 +77,7 @@ export function AboutSection() {
               Professionally, I contributed to product development at Display Your Passion Like a Boss, LLC, where I modeled mechanical 
               components for commercial products while supporting the broader design-to-manufacture (DFM) pipeline. My work ranged from 
               early concept modeling and parametric design to prototype validation and production refinement. Beyond professional work, 
-              I lead self-directed product builds—including a functional electric skateboard, an electric utility transport vehicle (EUTV), 
+              I lead self-directed product builds—including a custom electric skateboard, an electric utility vehicle (EUV), 
               a customized CoreXY 3D printer, and multiple product redesign and improvement projects. These projects strengthened my 
               ability to prototype quickly, refine designs through real-world feedback, and carry products from idea to working 
               implementation.

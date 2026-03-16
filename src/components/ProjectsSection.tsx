@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -64,9 +64,24 @@ export function ProjectsSection() {
     return offset + imageIndex;
   };
 
+  const openProjectModal = (projectId: number, slug: string) => {
+    setSelectedProject(projectId);
+    window.history.replaceState(null, "", `#projects/${slug}`);
+  };
+
+  const closeProjectModal = () => {
+    setSelectedProject(null);
+
+    // Keep user at the projects section, but remove the specific modal slug
+    if (window.location.hash.startsWith("#projects/")) {
+      window.history.replaceState(null, "", "#projects");
+    }
+  };
+
   const projects = [
     {
       id: 1,
+      slug: "display-system",
       title: "Display System for Mecha Model Kits",
       subtitle: "Commercial Product Line",
       company: "Display Your Passion Like a Boss, LLC",
@@ -113,6 +128,7 @@ export function ProjectsSection() {
     },
     {
       id: 2,
+      slug: "electric-skateboard",
       title: "Electric Skateboard",
       subtitle: "Custom Engineered Build",
       tools: "Fusion 360 | Onshape | FDM 3D Printing | Parametric CAD Modeling | Mechanical Design | Electronics Integration",
@@ -172,6 +188,7 @@ export function ProjectsSection() {
     },
     {
       id: 3,
+      slug: "euv",
       title: "Electric Utility Vehicle (EUV)",
       subtitle: "Utility Vehicle Prototype",
       tools: "Onshape | CNC Machining | Welding | FDM 3D Printing | Hand Fabrication | Electrical Wiring Integration | Mechanical System Design",
@@ -226,6 +243,7 @@ export function ProjectsSection() {
     },
     {
       id: 4,
+      slug: "corexy-printer",
       title: "Customized CoreXY 3D Printer Build",
       subtitle: "Ground-Up Mechanical Build & Architectural Redesign",
       tools: "Fusion 360 | FDM 3D Printing | Parametric CAD Design | CNC Machining | Motion Calibration | Hardware & Electronics Integration",
@@ -398,7 +416,34 @@ export function ProjectsSection() {
   */
 
 
+  useEffect(() => {
+    const syncProjectFromHash = () => {
+      const hash = window.location.hash;
+      const match = hash.match(/^#projects\/(.+)$/);
 
+      if (!match) return;
+
+      const slug = match[1];
+      const matchedProject = projects.find((p) => p.slug === slug);
+
+      if (matchedProject) {
+        setSelectedProject(matchedProject.id);
+
+        // Optional: scroll into view
+        const projectsSection = document.getElementById("projects");
+        if (projectsSection) {
+          projectsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+    };
+
+    syncProjectFromHash();
+    window.addEventListener("hashchange", syncProjectFromHash);
+
+    return () => {
+      window.removeEventListener("hashchange", syncProjectFromHash);
+    };
+  }, [projects]);
 
   return (
     <section id="projects" className="py-20 px-6 bg-transparent">
@@ -429,7 +474,7 @@ export function ProjectsSection() {
                 className="pl-1 sm:pl-1.5 md:pl-1.5 basis-full sm:basis-1/2 lg:basis-1/3 p-1 sm:p-1.5 md:p-2"
               >
                 <Card
-                  onClick={() => setSelectedProject(project.id)}
+                  onClick={() => openProjectModal(project.id, project.slug)}
                   className="card-hover group overflow-hidden border-card-border/50 bg-gradient-surface cursor-pointer transition-all duration-300 hover:scale-[1.02] h-full min-h-[280px] sm:min-h-[320px] md:min-h-[340px]"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
@@ -458,7 +503,7 @@ export function ProjectsSection() {
         <Dialog
           key={project.id}
           open={selectedProject === project.id}
-          onOpenChange={(open) => !open && setSelectedProject(null)}
+          onOpenChange={(open) => !open && closeProjectModal()}
         >
           <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto bg-surface border-card-border/50 [&>button]:text-destructive [&>button]:hover:text-destructive/80 [&>button>svg]:w-6 [&>button>svg]:h-6">
             <DialogHeader>
@@ -642,7 +687,7 @@ export function ProjectsSection() {
               {/* Close Button */}
               <div className="pt-4 border-t border-border/50">
                 <Button
-                  onClick={() => setSelectedProject(null)}
+                  onClick={closeProjectModal}
                   className="w-full border-0 transition-all duration-300"
                   style={{
                     background: "linear-gradient(135deg, hsl(220 10% 40%), hsl(0 84% 60%))",
